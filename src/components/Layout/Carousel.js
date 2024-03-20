@@ -21,12 +21,12 @@ const MyCarousel = ({ images }) => {
                 <img
                     src={images[currentImageIndex]}
                     alt="Carousel"
-                    className="object-cover lg:mx-0 mx-auto lg:w-[45vw] w-[90vw] lg:h-[55vh] rounded-lg transition-transform ease-in-out duration-500"
+                    className="object-cover lg:mx-0 mx-auto lg:w-[45vw] w-[90vw] lg:h-[55vh] h-[45vh] rounded-lg transition-transform ease-in-out duration-500"
                 />
                 <img
                     src={images[currentImageIndex + 1]}
                     alt="Carousel"
-                    className="object-cover lg:mx-0 mx-auto lg:w-[45vw] w-[90vw] lg:h-[55vh] rounded-lg transition-transform ease-in-out duration-500"
+                    className="object-cover lg:mx-0 mx-auto lg:w-[45vw] w-[90vw] lg:h-[55vh] h-[45vh] rounded-lg transition-transform ease-in-out duration-500"
                 />
                 <button
                     className="absolute left-[2vw] top-1/2 transform -translate-y-1/2 bg-neutral-950 text-white lg:text-[1.5vw] lg:px-[1vw] px-[2vw] lg:py-[2vh] py-[1vh] rounded-full z-10 transition-opacity duration-300 hover:opacity-75"
