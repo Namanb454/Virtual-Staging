@@ -99,7 +99,7 @@ const Seen = () => {
                     <div class="text-center grid xl:grid-cols-8 grid-cols-2 gap-8 content-center">
                         {data.map(data => {
                             return (
-                                <div class="lg:w-[145px] h-auto">
+                                <div class="lg:w-[145px] w-fit h-auto">
                                     <img className='mx-auto h-[5vh] aspect-[5]' src={data.img} />
                                 </div>
                             )
@@ -109,15 +109,15 @@ const Seen = () => {
 
                 <section class="text-gray-600 body-font">
                     <div class="container px-[2.5vw] py-[5vh] mx-auto">
-                        <div class="flex flex-wrap -m-[2vh] text-center">
+                        <div class="flex flex-wrap text-center">
 
                             {steps.map(data => {
                                 return (
                                     <div class="md:w-1/4 sm:w-1/2 w-full">
                                         <div class="px-4 py-6 rounded-lg space-y-[3vh]">
-                                            <h2 className='text-[15vh] mx-auto w-fit text-neutral-950 font-normal'>{data.step}</h2>
-                                            <h2 class="title-font text-[1.5vw] text-gray-900 font-semibold font-[inter]">{data.title}</h2>
-                                            <p class="leading-relaxed font-[inter] text-[1.1vw]">{data.desc}</p>
+                                            <h2 className='lg:text-[15vh] text-[10vh] mx-auto w-fit text-neutral-950 font-normal'>{data.step}</h2>
+                                            <h2 class="title-font lg:text-[1.5vw] text-gray-900 font-semibold font-[inter]">{data.title}</h2>
+                                            <p class="leading-relaxed font-[inter] lg:text-[1.1vw]">{data.desc}</p>
                                         </div>
                                     </div>
                                 )

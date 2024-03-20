@@ -184,7 +184,7 @@ export default function Header() {
                         return (
                             <Link to={data.link}
                                 variants={items}
-                                href="#how-it-works" className={`w-[30vw] text-neutral-950 hover:bg-neutral-800 hover:text-white px-[3vw] py-[2vh] rounded-full md:text-[2vh] text-[3vh] flex items-center space-x-[1vw] `}>
+                                href="#how-it-works" className={`w-[30vw] text-neutral-950 hover:bg-neutral-800 hover:text-white px-[3vw] py-[2vh] rounded-full md:text-[2vh] text-[2vh] flex items-center space-x-[1vw] `}>
                                 <span>
                                     {data.nav}
                                 </span>

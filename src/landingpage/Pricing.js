@@ -12,9 +12,9 @@ const Pricing = () => {
                     <table class="table-auto w-full text-left whitespace-no-wrap border-[1px] ">
                         <thead>
                             <tr>
-                                <th class="px-[3vw] py-[2vh] tracking-wider font-medium text-neutral-500 text-[1vw] bg-gray-100 rounded-tl rounded-bl">METHOD</th>
-                                <th class="px-[3vw] py-[2vh] tracking-wider font-medium text-neutral-500 text-[1vw] bg-gray-100 rounded-tl rounded-bl">TIME TO DELIVERY</th>
-                                <th class="px-[3vw] py-[2vh] tracking-wider font-medium text-neutral-500 text-[1vw] bg-gray-100 rounded-tl rounded-bl">PRICE($)</th>
+                                <th class="px-[3vw] py-[2vh] tracking-wider font-medium text-neutral-500 lg:text-[1vw] text-[4vw] bg-gray-100 rounded-tl rounded-bl">METHOD</th>
+                                <th class="px-[3vw] py-[2vh] tracking-wider font-medium text-neutral-500 lg:text-[1vw] text-[4vw] bg-gray-100 rounded-tl rounded-bl">TIME TO DELIVERY</th>
+                                <th class="px-[3vw] py-[2vh] tracking-wider font-medium text-neutral-500 lg:text-[1vw] text-[4vw] bg-gray-100 rounded-tl rounded-bl">PRICE($)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,8 +27,8 @@ const Pricing = () => {
                                         Our software.
                                     </h1>
                                 </td>
-                                <td class="px-[3vw] py-[3vh]">Seconds</td>
-                                <td class="px-[3vw] py-[3vh]">Only $5/image</td>
+                                <td class="px-[3vw] lg:text-[1.2vw] text-[3vw] py-[3vh]">Seconds</td>
+                                <td class="px-[3vw] lg:text-[1.2vw] text-[3vw] py-[3vh]">Only $5/image</td>
                             </tr>
 
                             <tr className='border-t-[1px] border-gray-200 text-neutral-500 font-normal font-[inter]'>
@@ -40,8 +40,8 @@ const Pricing = () => {
                                         Humans using photoshop to edit real estate images.
                                     </h1>
                                 </td>
-                                <td class="px-[3vw] py-[3vh]">Days</td>
-                                <td class="px-[3vw] py-[3vh]">$250.00+/property</td>
+                                <td class="px-[3vw] lg:text-[1.2vw] text-[3vw] py-[3vh]">Days</td>
+                                <td class="px-[3vw] lg:text-[1.2vw] text-[3vw] py-[3vh]">$250.00+/property</td>
                             </tr>
                             <tr className='border-t-[1px] border-gray-200 text-neutral-500 font-normal font-[inter]'>
                                 <td class="px-[3vw] py-[3vh]">
@@ -52,8 +52,8 @@ const Pricing = () => {
                                         Physically staging a home with furniture.
                                     </h1>
                                 </td>
-                                <td class="px-[3vw] py-[3vh]">Weeks</td>
-                                <td class="px-[3vw] py-[3vh]">$2,000.00+/property</td>
+                                <td class="px-[3vw] lg:text-[1.2vw] text-[3vw] py-[3vh]">Weeks</td>
+                                <td class="px-[3vw] lg:text-[1.2vw] text-[3vw] py-[3vh]">$2,000.00+/property</td>
                             </tr>
 
                         </tbody>
