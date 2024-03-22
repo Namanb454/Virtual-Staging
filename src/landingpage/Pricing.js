@@ -33,7 +33,7 @@ const Pricing = () => {
         <div className='py-[10vh]'>
             <section class=" body-font">
                 <div class="mx-auto">
-                    <div class="flex flex-col text-center w-[100vw] mb-[10vh]">
+                    <div class="text-center w-[100%] mb-[10vh]">
                         <h1 class="lg:text-[3vw] text-[5vw] lg:px-0 px-[3vw] font-medium title-font mb-2 text-neutral-950 font-[lexend]">Bring down your home staging cost with AI Virtual Staging</h1>
                     </div>
 
