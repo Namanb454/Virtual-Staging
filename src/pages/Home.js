@@ -4,6 +4,8 @@ import { FaPlay } from "react-icons/fa";
 import Banner from '../landingpage/Banner';
 import Seen from '../landingpage/Seen';
 import Pricing from '../landingpage/Pricing';
+import ClientServe from '../landingpage/ClientServe';
+import Video from '../landingpage/Video';
 
 const Home = () => {
     return (
@@ -14,6 +16,10 @@ const Home = () => {
             <Seen />
 
             <Pricing />
+
+            <ClientServe />
+
+            <Video/>
 
         </Layout>
     )

@@ -35,35 +35,19 @@ const Seen = () => {
 
     const carouselImages = [
 
-        'home/carousel1a.webp',
-        'home/carousel1b.webp',
+        'home/BedroomA.jpg',
+        'home/BedroomB.jpg',
 
-        'home/carousel2a.webp',
-        'home/carousel2b.webp',
-
-
-        'home/carousel3a.webp',
-        'home/carousel3b.webp',
+        'home/DiningRoomA.jpg',
+        'home/DiningRoomB.jpg',
 
 
-        'home/carousel4a.webp',
-        'home/carousel4b.webp',
+        'home/HomeOfficeA.jpg',
+        'home/HomeOfficeB.jpg',
 
 
-        'home/carousel5a.webp',
-        'home/carousel5b.webp',
-
-
-        'home/carousel6a.webp',
-        'home/carousel6b.webp',
-
-
-        'home/carousel7a.webp',
-        'home/carousel7b.webp',
-
-
-        'home/carousel8a.webp',
-        'home/carousel8b.webp',
+        'home/LivingRoomA.jpg',
+        'home/LivingRoomB.jpg',
 
     ]
 
@@ -115,9 +99,9 @@ const Seen = () => {
                                 return (
                                     <div class="md:w-1/4 sm:w-1/2 w-full">
                                         <div class="px-4 py-6 rounded-lg space-y-[3vh]">
-                                            <h2 className='lg:text-[15vh] text-[10vh] mx-auto w-fit text-neutral-950 font-normal'>{data.step}</h2>
-                                            <h2 class="title-font lg:text-[1.5vw] text-gray-900 font-semibold font-[inter]">{data.title}</h2>
-                                            <p class="leading-relaxed font-[inter] lg:text-[1.1vw]">{data.desc}</p>
+                                            <h2 className='lg:text-[5vw] text-[10vw] mx-auto w-fit text-neutral-950 font-normal'>{data.step}</h2>
+                                            <h2 class="title-font lg:text-[1.5vw] text-[5vw] text-gray-900 font-semibold font-[inter]">{data.title}</h2>
+                                            <p class="leading-relaxed font-[inter] lg:text-[1.1vw] text-justify">{data.desc}</p>
                                         </div>
                                     </div>
                                 )
@@ -127,16 +111,8 @@ const Seen = () => {
                 </section>
             </section>
 
-            <div>
-                <h1 className='text-[3.5vw] font-[lexend] text-center py-[2vh]'>AI Virtual Staging Image Examples</h1>
-                <div className='flex mx-auto w-[90vw]'>
-                    <h2 className='w-[45vw] text-center mx-auto font-[inter] font-bold'>
-                        Before Virtual Staging
-                    </h2>
-                    <h2 className='w-[45vw] text-center mx-auto font-[inter] font-bold'>
-                        After Virtual Staging
-                    </h2>
-                </div>
+            <div className='py-[10vh]'>
+                <h1 className='lg:text-[3.5vw] text-[5vw] font-[lexend] text-center py-[2vh]'>AI Virtual Staging Image Examples</h1>
                 <MyCarousel images={carouselImages} />
             </div>
         </div>

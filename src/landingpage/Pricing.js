@@ -34,7 +34,7 @@ const Pricing = () => {
             <section class=" body-font">
                 <div class="mx-auto">
                     <div class="flex flex-col text-center w-[100vw] mb-[10vh]">
-                        <h1 class="lg:text-[3vw] text-3xl font-medium title-font mb-2 text-neutral-950 font-[lexend]">Bring down your home staging cost with AI Virtual Staging</h1>
+                        <h1 class="lg:text-[3vw] text-[5vw] lg:px-0 px-[3vw] font-medium title-font mb-2 text-neutral-950 font-[lexend]">Bring down your home staging cost with AI Virtual Staging</h1>
                     </div>
 
                     <div class="lg:w-[90vw] w-full mx-auto overflow-auto rounded-xl shadow-sm shadow-neutral-300 font-[inter]">
@@ -95,7 +95,7 @@ const Pricing = () => {
             </section>
 
 
-            <div className='py-[10vh]'>
+            <div className='pt-[10vh]'>
                 <h1 className='font-[inter] text-center font-medium my-[2vh]'>
                     Trusted by Professionals at
                 </h1>
