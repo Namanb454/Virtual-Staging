@@ -68,11 +68,11 @@ const Pricing = () => {
 
                         <motion.h1
                             variants={item}
-                            className="lg:w-[80%] 2xl:w-[60%] mx-auto 2xl:text-5xl xl:text-4xl text-3xl font-bold title-font mb-5 text-neutral-950 capitalize">
+                            className="lg:w-[80%] 2xl:w-[60%] mx-auto 2xl:text-5xl xl:text-4xl text-3xl font-bold title-font mb-5 text-[#081d27] font-[Astro] capitalize">
                             Reduce your home<span className='text-[#ffc300]'> interior</span> expenses</motion.h1>
                         <motion.p
                             variants={item}
-                            className="2xl:w-[50%] xl:w-[60%] mx-auto leading-relaxed 2xl:text-xl xl:text-lg xl:px-10 px-2 text-black">Our affordable pricing makes it possible for small and large businesses to get high-quality professional on-model images  for their garments</motion.p>
+                            className="font-[Modeka] lg:w-[50vw] tracking-wide font-semibold mx-auto leading-relaxed lg:text-[1.5vw] px-2 text-black">Our affordable rates allow individuals to access top-tier professional images showcasing their interior designs.</motion.p>
 
 
                     </motion.div>

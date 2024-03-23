@@ -87,8 +87,8 @@ const Seen = () => {
                                     <div class="md:w-1/4 sm:w-1/2 w-full">
                                         <div class="px-4 py-6 rounded-lg space-y-[3vh]">
                                             <h2 className='lg:text-[5vw] text-[10vw] mx-auto w-fit text-[#013147c9] font-normal'>{data.step}</h2>
-                                            <h2 class="title-font text-neutral-950 lg:text-[1.5vw] text-[5vw]  font-semibold font-[inter]">{data.title}</h2>
-                                            <p class="leading-relaxed font-[inter] lg:text-[1.1vw] text-justify">{data.desc}</p>
+                                            <h2 class="title-font text-neutral-950 lg:text-[0.8vw] text-[5vw] font-extrabold font-[Astro]">{data.title}</h2>
+                                            <p class="leading-relaxed font-[Modeka] lg:text-[1.4vw] text-justify font-bold">{data.desc}</p>
                                         </div>
                                     </div>
                                 )
@@ -99,7 +99,7 @@ const Seen = () => {
             </section>
 
             <div className='py-[10vh]'>
-                <h1 className='lg:text-[3.5vw] text-[5vw] font-[lexend] text-center py-[2vh]'>AI Virtual Staging Image Examples</h1>
+                <h1 className='lg:text-[3vw] text-[5vw] font-[Astro] uppercase font-extrabold text-center py-[2vh] tracking-wide'>Tipriyo <span className='text-[#ffc300]'>Image</span> Examples</h1>
                 <MyCarousel images={carouselImages} />
             </div>
         </div>

@@ -17,10 +17,10 @@ const MyCarousel = ({ images }) => {
     };
     return (
         <div className="relative">
-            <div className="lg:flex justify-center items-center lg:space-x-[1.5vw] lg:space-y-0 space-y-[3vh]">
+            <div className="lg:flex lg:text-[1.5vw] font-[Modeka] justify-center items-center lg:space-x-[1.5vw] lg:space-y-0 space-y-[3vh]">
                 <div>
-                    <h2 className='w-[45vw] text-center mx-auto font-[inter] font-bold'>
-                        Before Virtual Staging
+                    <h2 className='w-[45vw] text-center mx-auto font-bold'>
+                        Before Tipriyo
                     </h2>
                     <img
                         src={images[currentImageIndex]}
@@ -29,8 +29,8 @@ const MyCarousel = ({ images }) => {
                     />
                 </div>
                 <div>
-                    <h2 className='w-[45vw] text-center mx-auto font-[inter] font-bold'>
-                        After Virtual Staging
+                    <h2 className='w-[45vw] text-center mx-auto font-bold'>
+                        After Tipriyo
                     </h2>
                     <img
                         src={images[currentImageIndex + 1]}

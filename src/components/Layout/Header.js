@@ -87,7 +87,7 @@ export default function Header() {
             variants={variants}
             initial='hidden'
             animate='show'
-            className="scroll-smooth font-[Deluxe]">
+            className="scroll-smooth font-[Astro]">
             <div className="lg:w-[70vw] w-[100%] mx-auto py-[3vh] px-5 sm:px-6 md:px-[2.5vw] bg-[#081d27] border-2 rounded-full">
                 <div className="flex items-center justify-between">
                     <motion.div
@@ -108,13 +108,13 @@ export default function Header() {
                                     return (
                                         <Link to={data.link} variants={item}
                                             className={`w-[9vw] text-[#8dcae5] 
-                                        hover:bg-neutral-700 hover:text-white px-[1vw] py-[2vh] rounded-full text-[2.5vh] font-extrabold flex items-center space-x-[1vw] shadow-neutral-500 shadow-
+                                        hover:bg-neutral-700 hover:text-white px-[1vw] py-[2vh] rounded-full text-[2vh] font- flex items-center space-x-[1vw] shadow-neutral-500 shadow-
                                                  ${index === 3 && 'bg-[#9DB2BF] hover:bg-blue-500'}
                                         `}>
                                             <span>
                                                 {data.nav}
                                             </span>
-                                            <span className='text-[#ffc300]'>
+                                            <span className='text-[#ffc300] text-[3vh]'>
                                                 {data.icon}
                                             </span>
                                         </Link>

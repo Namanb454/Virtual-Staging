@@ -10,11 +10,11 @@ import Header from '../components/Layout/Header';
 const Home = () => {
     return (
         <div title={"Tipriyo-Home "}>
-            <div className='bg-cover h-screen'
+            <div className='bg-cover h-screen bg-fixed'
                 style={{
                     backgroundImage: 'url("home/LivingRoomB.jpg")'
                 }}>
-                <div className='backdrop-blur-sm pt-[7vh]'>
+                <div className='backdrop-blur-sm pt-[7vh] h-screen'>
                     <Header />
                     <Banner />
                 </div>
