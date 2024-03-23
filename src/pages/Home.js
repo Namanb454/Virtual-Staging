@@ -14,7 +14,7 @@ const Home = () => {
                 style={{
                     backgroundImage: 'url("home/LivingRoomB.jpg")'
                 }}>
-                <div className='backdrop-blur-sm pt-[7vh] h-screen'>
+                <div className='backdrop-blur-sm lg:pt-[7vh] pt-[3vh] h-screen'>
                     <Header />
                     <Banner />
                 </div>

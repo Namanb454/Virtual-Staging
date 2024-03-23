@@ -90,7 +90,7 @@ const Pricing = () => {
 
                         <motion.h1
                             variants={item}
-                            className="lg:w-[80%] 2xl:w-[60%] mx-auto 2xl:text-5xl xl:text-4xl text-3xl font-bold title-font mb-5 text-[#081d27] font-[Astro] capitalize">
+                            className="lg:w-[80%] 2xl:w-[60%] mx-auto lg:text-[3vw] text-[5vw] font-bold title-font mb-5 text-[#081d27] font-[Astro] capitalize">
                             Reduce your home<span className='text-[#ffc300]'> interior</span> expenses</motion.h1>
                         <motion.p
                             variants={item}
@@ -103,23 +103,23 @@ const Pricing = () => {
                     <div className="mx-auto">
                         {/* Grid */}
                         <div className="">
-                            <div className="flex lg:items-center space-x-[5vw] mx-auto w-fit">
+                            <div className="lg:flex lg:items-center lg:space-x-[5vw] lg:space-y-0 space-y-[10vw] mx-auto lg:w-fit w-[80vw]">
 
                                 {pricing_data.map((data, index) => {
                                     return (
-                                        <div className="w-[25vw] h-[60vh] text-center text-[#081d27] rounded-2xl shadow-lg shadow-[#081d27]">
+                                        <div className="lg:w-[25vw] lg:h-[60vh] h-[50vh] text-center text-[#081d27] rounded-2xl shadow-sm shadow-[#081d27]">
                                             <div className="py-[4vh] font-[Modeka] tracking-wide font-bold">
-                                                <h4 className="text-[2vw] ">{data.title}</h4>
+                                                <h4 className="lg:text-[2vw] text-[5vw]">{data.title}</h4>
                                             </div>
 
                                             <div className="lg:py-[2vh] font-[astro] tracking-widest">
-                                                <span className="font-bold text-[2vw] ">
+                                                <span className="font-bold lg:text-[2vw] text-[6vw]">
                                                     {data.price}
                                                 </span>
                                             </div>
 
                                             <div className=" flex justify-center py-[3.5vh] font-[modeka] font-bold">
-                                                <ul className="space-y-[2vh] text-center text-[1.5vw]">
+                                                <ul className="space-y-[2vh] text-center lg:text-[1.5vw]">
                                                     <li className="">
                                                         {data.time}
                                                     </li>
@@ -129,7 +129,7 @@ const Pricing = () => {
                                                 </ul>
                                             </div>
                                             <div className="p-[2vw] font-[astro]">
-                                                <a className="py-3 px-4 w-full inline-flex justify-center items-center gap-x-2 text-[1vw] font-semibold rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
+                                                <a className="py-3 px-4 w-full inline-flex justify-center items-center gap-x-2 lg:text-[1vw] text-[3vw] font-semibold rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
                                                     Sign up
                                                 </a>
                                             </div>
