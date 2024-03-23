@@ -107,7 +107,7 @@ const Pricing = () => {
 
                                 {pricing_data.map((data, index) => {
                                     return (
-                                        <div className="lg:w-[25vw] lg:h-[60vh] h-[50vh] text-center text-[#081d27] rounded-2xl shadow-sm shadow-[#081d27]">
+                                        <div className="lg:w-[25vw] lg:h-[60vh] h-[50vh] text-center text-[#081d27] rounded-2xl shadow-md border-2 border-gray-200">
                                             <div className="py-[4vh] font-[Modeka] tracking-wide font-bold">
                                                 <h4 className="lg:text-[2vw] text-[5vw]">{data.title}</h4>
                                             </div>
@@ -128,7 +128,7 @@ const Pricing = () => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className="p-[2vw] font-[astro]">
+                                            <div className="lg:px-[5vw] lg:py-[2vh] px-[20vw] py-[5vh] font-[astro]">
                                                 <a className="py-3 px-4 w-full inline-flex justify-center items-center gap-x-2 lg:text-[1vw] text-[3vw] font-semibold rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
                                                     Sign up
                                                 </a>
