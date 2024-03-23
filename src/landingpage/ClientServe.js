@@ -30,7 +30,7 @@ const ClientServe = () => {
 
     return (
         <section class="text-gray-600 body-font">
-            <div class="container px-[2.5vw] py-[10vh] mx-auto font-[inter] text-neutral-950">
+            <div class="container px-[2.5vw] lg:py-[10vh] py-[5vh] mx-auto font-[inter] text-neutral-950">
                 <div class="flex flex-col text-center w-full mb-[5vh]">
                     <h1 class="lg:text-[3vw] text-[5vw] font-[550] title-font mb-4">Clients we serve</h1>
                 </div>

@@ -86,7 +86,7 @@ export default function Header() {
                         {/* Logo  */}
                         <motion.a variants={item} href='/' className="flex-shrink-0 md:w-fit w-full flex items-center">
                             <motion.img className="lg:w-[3vw] md:w-[8vw] w-[10vw] rounded-full" src="marknobackground.png" alt="Logo" />
-                            <h2 className='text-[#ffc300] font-[modeka] lg:text-[2.5vw] tracking-wide'>Tipriyo</h2>
+                            <h2 className='text-[#ffc300] font-[modeka] lg:text-[2.5vw] text-[7vw] tracking-wide'>Tipriyo</h2>
                         </motion.a>
 
 
@@ -171,12 +171,12 @@ export default function Header() {
                     variants={variantss}
                     initial='hidden'
                     animate='show'
-                    className="pt-2 pb-3 sm:px- w-[90%] mx-auto rounded-3xl text-left md:space-y-[1vw] space-y-[5vw] shadow-sm shadow-black">
+                    className="mt-[3vh] pt-2 pb-3 sm:px- w-[90%] mx-auto rounded-3xl text-left md:space-y-[1vw] space-y-[5vw] shadow-sm shadow-gray-500 ">
                     {navs.map((data, index) => {
                         return (
                             <Link to={data.link}
                                 variants={items}
-                                href="#how-it-works" className={`w-[30vw] text-neutral-950 hover:bg-neutral-800 hover:text-white px-[3vw] py-[2vh] rounded-full md:text-[2vh] text-[2vh] flex items-center space-x-[1vw] `}>
+                                href="#how-it-works" className={`w-[30vw] text-neutral-950 hover:bg-neutral-800 hover:text-white px-[3vw] py-[2vh] rounded-full md:text-[2vh] text-[1.5vh] flex items-center space-x-[1vw]`}>
                                 <span>
                                     {data.nav}
                                 </span>
