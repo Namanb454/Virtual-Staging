@@ -59,19 +59,19 @@ const Pricing = () => {
             'title': 'Virtual Staging with AI',
             'method': 'Our Software',
             'time': 'Seconds',
-            'price': 'Rs 100 / image'
+            'price': '100'
         },
         {
             'title': 'Virtual Staging',
             'method': 'Humans using photoshop',
             'time': 'Days',
-            'price': 'Rs 500 / image'
+            'price': '500'
         },
         {
             'title': 'Physical Staging',
             'method': 'Physically staging a home with furniture',
             'time': 'Weeks',
-            'price': 'Rs 1000 / image'
+            'price': '1000'
         },
     ]
 
@@ -94,7 +94,7 @@ const Pricing = () => {
                             Reduce your home<span className='text-[#ffc300]'> interior</span> expenses</motion.h1>
                         <motion.p
                             variants={item}
-                            className="font-[Modeka] lg:w-[50vw] tracking-wide font-semibold mx-auto leading-relaxed lg:text-[1.5vw] px-2 text-black">Our affordable rates allow individuals to access top-tier professional images showcasing their interior designs.</motion.p>
+                            className="font-[Modeka] lg:w-[50vw] tracking-wide font-semibold mx-auto leading-relaxed lg:text-[1.5vw] px-2 text-[#013147c9]">Our affordable rates allow individuals to access top-tier professional images showcasing their interior designs.</motion.p>
 
 
                     </motion.div>
@@ -109,14 +109,19 @@ const Pricing = () => {
 
                                 {pricing_data.map((data, index) => {
                                     return (
-                                        <div className="lg:w-[25vw] lg:h-[60vh] h-[50vh] text-center text-[#081d27] rounded-2xl shadow-md shadow-[#87c0d9] border border-[#209dbb]">
-                                            <div className="py-[4vh] font-[Modeka] tracking-wide font-bold">
+                                        <motion.div
+                                            initial={{ scale: 0, y: 100 }}
+                                            whileInView={{ scale: 1, y: 0 }}
+                                            transition={{ duration: 0.5 * index }}
+                                            viewport={{ once: true }}
+                                            className="bg-[#fcfcea] lg:w-[25vw] lg:h-[60vh] h-[50vh] text-center text-[#013147c9] rounded-2xl shadow-md shadow-gray-300 border-">
+                                            <div className="py-[4vh] font-[baguile] tracking-wide font-bold">
                                                 <h4 className="lg:text-[2vw] text-[5vw]">{data.title}</h4>
                                             </div>
 
-                                            <div className="lg:py-[2vh] font-[astro] tracking-widest">
-                                                <span className="font-bold lg:text-[2vw] text-[6vw]">
-                                                    {data.price}
+                                            <div className="lg:py-[2vh] font-[baguile] tracking-widest">
+                                                <span className="font-bold lg:text-[2vw] text-[6vw] text-[#081d27]">
+                                                    <span className='font-[baguile]'>&#8377;{data.price}</span>/image
                                                 </span>
                                             </div>
 
@@ -130,12 +135,12 @@ const Pricing = () => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className="lg:px-[5vw] lg:py-[2vh] px-[20vw] py-[5vh] font-[astro]">
-                                                <a className="py-3 px-4 w-full inline-flex justify-center items-center gap-x-2 lg:text-[1vw] text-[3vw] font-semibold rounded-lg border border-[#209dbb] text-[#209dbb] hover:border-87c0d9 hover:text-[#87c0d9] disabled:opacity-50 disabled:pointer-events-none  dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
+                                            <div className="lg:px-[5vw] lg:py-[2vh] px-[20vw] py-[5vh] font-[baguile]">
+                                                <a className="py-3 px-4 w-full inline-flex justify-center items-center gap-x-2 lg:text-[1.4vw] text-[3vw] font-semibold rounded-lg border border-[#209dbb] text-[#081d27] hover:border-87c0d9 hover:text-[#87c0d9] hover:bg-[#081d27] disabled:opacity-50 disabled:pointer-events-none  dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 transition-all duration-300" href="/">
                                                     Sign up
                                                 </a>
                                             </div>
-                                        </div>
+                                        </motion.div>
                                     )
                                 })}
                             </div>

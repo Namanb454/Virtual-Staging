@@ -52,22 +52,22 @@ const Seen = () => {
 
     const steps = [
         {
-            'title': 'Step 1: Upload Image',
+            'title': '1. Upload Image',
             'desc': "Upload a high-quality image of an empty room. File types supported: JPG, JPEG, and PNG",
             'step': <BsCloudUpload />,
         },
         {
-            'title': 'Step 2: Choose Style',
+            'title': '2. Choose Style',
             'desc': "Choose the style of furniture. There are many to try from!",
             'step': <BiPointer />,
         },
         {
-            'title': 'Step 3: Submit',
+            'title': '3. Submit',
             'desc': "Click “Submit” to stage your room! Wait for 30 seconds to see your staged images!",
             'step': <GoChecklist />,
         },
         {
-            'title': 'Step 4: Regenerate',
+            'title': '4. Regenerate',
             'desc': "Regenerate for perfection. Regenerate as many times as you want until you get the perfect image!",
             'step': <GrPowerCycle />,
         },
@@ -89,8 +89,8 @@ const Seen = () => {
                                     <div class="md:w-1/4 sm:w-1/2 w-full">
                                         <div class="px-4 py-6 rounded-lg space-y-[3vh]">
                                             <h2 className='lg:text-[5vw] text-[10vw] mx-auto w-fit text-[#013147c9] font-normal'>{data.step}</h2>
-                                            <h2 class="title-font text-neutral-950 lg:text-[0.8vw] text-[5vw] font-extrabold font-[Astro]">{data.title}</h2>
-                                            <p class="leading-relaxed font-[Modeka] lg:text-[1.4vw] text-justify font-bold">{data.desc}</p>
+                                            <h2 class="title-font text-neutral-950 lg:text-[2vw] text-[5vw] font-extrabold font-[baguile]">{data.title}</h2>
+                                            <p class="leading-relaxed font-[Modeka] lg:text-[1.4vw] text-justify font-bold text-[#013147c9]">{data.desc}</p>
                                         </div>
                                     </div>
                                 )

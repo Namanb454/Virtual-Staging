@@ -9,7 +9,7 @@ import Header from '../components/Layout/Header';
 
 const Home = () => {
     return (
-        <div title={"Tipriyo-Home "}>
+        <div title={"Tipriyo-Home "} className='bg-[#ffffef]'>
             <div className='bg-cover h-screen bg-fixed'
                 style={{
                     backgroundImage: 'url("home/LivingRoomB.jpg")'
