@@ -29,30 +29,6 @@ const Pricing = () => {
         },
     };
 
-    const variants2 = {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: inView ? 1 : 0,
-            transition: {
-                staggerChildren: 0.2,
-            },
-        },
-    };
-
-    const items2 = {
-        hidden: {
-            opacity: 0,
-            y: 100,
-        },
-        show: {
-            opacity: 1,
-            y: inView ? 0 : 100,
-            transition: {
-                duration: 1,
-            },
-        },
-    };
-
 
     const pricing_data = [
         {

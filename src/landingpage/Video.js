@@ -2,7 +2,7 @@ import React from 'react'
 
 const Video = () => {
     return (
-        <div className='py-[10vh] w-[100%] mx-auto text-center h- bg text-white bg-gradient-to-br from-[#081d27] from-[50%] to-[#87c0d9] space-y-[5vh]'
+        <div id='video' className='py-[10vh] w-[100%] mx-auto text-center h- bg text-white bg-gradient-to-br from-[#081d27] from-[50%] to-[#87c0d9] space-y-[5vh]'
         >
             <h1 className='lg:text-[3vw] text-[5vw] lg:px-0 px-[3vw] font-extrabold font-[astro]'>Get started today</h1>
 
