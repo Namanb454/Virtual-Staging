@@ -80,7 +80,9 @@ const Seen = () => {
             <section class="text-gray-600 body-font">
                 <section class="text-gray-600 body-font">
                     <div class="container px-[2.5vw] lg:py-[10vh] py-[5vh] mx-auto">
-                        <div class="flex flex-wrap text-center">
+                        <div class="flex flex-wrap text-center"
+                            data-scroll data-scroll-speed='0.5'
+                        >
 
                             {steps.map(data => {
                                 return (
@@ -98,9 +100,12 @@ const Seen = () => {
                 </section>
             </section>
 
-            <div className='lg:py-[10vh] py-[5vh]'>
-                <h1 className='lg:text-[3vw] text-[5vw] font-[Astro] uppercase font-extrabold text-center py-[2vh] tracking-wide'>Tipriyo <span className='text-[#ffc300]'>Image</span> Examples</h1>
-                <MyCarousel images={carouselImages} />
+            <div className='lg:py-[10vh] py-[5vh]'
+            >
+                <h1 className='lg:text-[3vw] text-[5vw] font-[Astro] uppercase font-extrabold text-center py-[2vh] tracking-wide'
+                >Tipriyo <span className='text-[#ffc300]'>Image</span> Examples</h1>
+                <MyCarousel
+                    images={carouselImages} />
             </div>
         </div>
     )

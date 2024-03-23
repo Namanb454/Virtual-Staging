@@ -1,8 +1,10 @@
 import './App.css';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from './pages/Home';
+import LocomotiveScroll from 'locomotive-scroll';
 
 function App() {
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <>
       <BrowserRouter>

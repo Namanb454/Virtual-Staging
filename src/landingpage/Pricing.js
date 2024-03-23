@@ -100,14 +100,16 @@ const Pricing = () => {
                     </motion.div>
 
                     {/* <!-- Pricing --> */}
-                    <div className="mx-auto">
+                    <div className="mx-auto"
+                        data-scroll data-scroll-speed='0.5'
+                    >
                         {/* Grid */}
                         <div className="">
                             <div className="lg:flex lg:items-center lg:space-x-[5vw] lg:space-y-0 space-y-[10vw] mx-auto lg:w-fit w-[80vw]">
 
                                 {pricing_data.map((data, index) => {
                                     return (
-                                        <div className="lg:w-[25vw] lg:h-[60vh] h-[50vh] text-center text-[#081d27] rounded-2xl shadow-md border-2 border-gray-200">
+                                        <div className="lg:w-[25vw] lg:h-[60vh] h-[50vh] text-center text-[#081d27] rounded-2xl shadow-md shadow-[#87c0d9] border border-[#209dbb]">
                                             <div className="py-[4vh] font-[Modeka] tracking-wide font-bold">
                                                 <h4 className="lg:text-[2vw] text-[5vw]">{data.title}</h4>
                                             </div>
@@ -129,7 +131,7 @@ const Pricing = () => {
                                                 </ul>
                                             </div>
                                             <div className="lg:px-[5vw] lg:py-[2vh] px-[20vw] py-[5vh] font-[astro]">
-                                                <a className="py-3 px-4 w-full inline-flex justify-center items-center gap-x-2 lg:text-[1vw] text-[3vw] font-semibold rounded-lg border border-blue-600 text-blue-600 hover:border-blue-500 hover:text-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-blue-500 dark:text-blue-500 dark:hover:text-blue-400 dark:hover:border-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
+                                                <a className="py-3 px-4 w-full inline-flex justify-center items-center gap-x-2 lg:text-[1vw] text-[3vw] font-semibold rounded-lg border border-[#209dbb] text-[#209dbb] hover:border-87c0d9 hover:text-[#87c0d9] disabled:opacity-50 disabled:pointer-events-none  dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
                                                     Sign up
                                                 </a>
                                             </div>
