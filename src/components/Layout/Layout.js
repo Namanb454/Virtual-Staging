@@ -24,9 +24,9 @@ const Layout = ({ children, title, description, keywords, author }) => {
 };
 
 Layout.defaultProps = {
-    title: "Virtual Staging",
-    description: "Vritual Staging",
-    keywords: "Vritual Staging",
+    title: "Tipriyo",
+    description: "Tipriyo",
+    keywords: "Tipriyo",
     author: "Nikhil Bafna",
 };
 

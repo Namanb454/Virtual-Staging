@@ -60,20 +60,20 @@ export default function Header() {
 
     const navs = [
         {
-            'nav': 'Contact',
+            'nav': 'Email',
             'link': '/contact',
             'icon': <MdCall />
         },
-        {
-            'nav': 'Clients',
-            'link': '/clients',
-            'icon': <FaUserFriends />
-        },
-        {
-            'nav': 'Results',
-            'link': '/results',
-            'icon': <IoImageSharp />
-        },
+        // {
+        //     'nav': 'Clients',
+        //     'link': '/clients',
+        //     'icon': <FaUserFriends />
+        // },
+        // {
+        //     'nav': 'Results',
+        //     'link': '/results',
+        //     'icon': <IoImageSharp />
+        // },
         {
             'nav': 'Login',
             'link': '/login',
@@ -87,33 +87,34 @@ export default function Header() {
             variants={variants}
             initial='hidden'
             animate='show'
-            className="scroll-smooth">
-            <div className="font-[inter] w-full mx-auto px-5 sm:px-6 md:px-[2.5vw] mt-[7vh]">
+            className="scroll-smooth font-[Deluxe]">
+            <div className="lg:w-[70vw] w-[100%] mx-auto py-[3vh] px-5 sm:px-6 md:px-[2.5vw] bg-[#081d27] border-2 rounded-full">
                 <div className="flex items-center justify-between">
                     <motion.div
                         className="flex items-center w-full">
 
                         {/* Logo  */}
                         <motion.a variants={item} href='/' className="flex-shrink-0 md:w-fit w-full flex items-center">
-                            <motion.img className="lg:w-[4vw] md:w-[8vw] w-[13vw]" src="vs-icon.webp" alt="Logo" />
+                            <motion.img className="lg:w-[10vw] md:w-[8vw] w-[20vw] rounded-full" src="Logo - white background.jpg" alt="Logo" />
                         </motion.a>
 
 
                         <div className="hidden lg:block w-fit ml-auto">
 
                             <motion.div
+                                variants={item}
                                 className="children flex items-center w-[100%] mx-auto space-x-[3vw]">
                                 {navs.map((data, index) => {
                                     return (
                                         <Link to={data.link} variants={item}
-                                            className={`w-[9vw] text-white bg-neutral-950
-                                        hover:bg-neutral-700 hover:text-white px-[1vw] py-[2vh] rounded-full text-[2.5vh] font-semibold flex items-center space-x-[1vw] shadow-neutral-500 shadow-sm
-                                                 ${index === 3 && 'bg-blue-600 hover:bg-blue-500'}
+                                            className={`w-[9vw] text-[#8dcae5] 
+                                        hover:bg-neutral-700 hover:text-white px-[1vw] py-[2vh] rounded-full text-[2.5vh] font-extrabold flex items-center space-x-[1vw] shadow-neutral-500 shadow-
+                                                 ${index === 3 && 'bg-[#9DB2BF] hover:bg-blue-500'}
                                         `}>
                                             <span>
                                                 {data.nav}
                                             </span>
-                                            <span>
+                                            <span className='text-[#ffc300]'>
                                                 {data.icon}
                                             </span>
                                         </Link>
@@ -125,14 +126,14 @@ export default function Header() {
 
                     </motion.div>
                     <motion.div variants={item} className="-mr-2 flex lg:hidden w-10">
-                        <button onClick={() => setIsOpen(!isOpen)} className={` inline-flex items-center justify-center p-2 rounded-md text-slate-700 focus:outline-none`}>
+                        <button onClick={() => setIsOpen(!isOpen)} className={` inline-flex items-center justify-center p-2 rounded-md text-white focus:outline-none`}>
                             {isOpen ?
                                 <svg
                                     initial={{ scale: 0 }}
                                     whileInView={{ scale: 1 }}
                                     whileTap={{ scale: 0 }}
                                     transform={{ duration: 0.5 }}
-                                    className="h-6 w-6 block text-slate-700 "
+                                    className="h-6 w-6 block text-white "
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     stroke="currentColor"

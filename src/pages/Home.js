@@ -1,17 +1,24 @@
 import React from 'react'
 import Layout from '../components/Layout/Layout'
-import { FaPlay } from "react-icons/fa";
 import Banner from '../landingpage/Banner';
 import Seen from '../landingpage/Seen';
 import Pricing from '../landingpage/Pricing';
 import ClientServe from '../landingpage/ClientServe';
 import Video from '../landingpage/Video';
+import Header from '../components/Layout/Header';
 
 const Home = () => {
     return (
-        <Layout title={"Virtual-Staging-Home "}>
-
-            <Banner />
+        <div title={"Tipriyo-Home "}>
+            <div className='bg-cover h-screen'
+                style={{
+                    backgroundImage: 'url("home/LivingRoomB.jpg")'
+                }}>
+                <div className='backdrop-blur-sm pt-[7vh]'>
+                    <Header />
+                    <Banner />
+                </div>
+            </div>
 
             <Seen />
 
@@ -19,9 +26,9 @@ const Home = () => {
 
             <ClientServe />
 
-            <Video/>
+            <Video />
 
-        </Layout>
+        </div>
     )
 }
 
