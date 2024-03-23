@@ -64,16 +64,6 @@ export default function Header() {
             'link': '/contact',
             'icon': <MdCall />
         },
-        // {
-        //     'nav': 'Clients',
-        //     'link': '/clients',
-        //     'icon': <FaUserFriends />
-        // },
-        // {
-        //     'nav': 'Results',
-        //     'link': '/results',
-        //     'icon': <IoImageSharp />
-        // },
         {
             'nav': 'Login',
             'link': '/login',
@@ -88,14 +78,15 @@ export default function Header() {
             initial='hidden'
             animate='show'
             className="scroll-smooth font-[Astro]">
-            <div className="lg:w-[70vw] w-[100%] mx-auto py-[3vh] px-5 sm:px-6 md:px-[2.5vw] bg-[#081d27] border-2 rounded-full">
+            <div className="lg:w-[70vw] w-[100%] mx-auto py-[1.5vh] px-5 sm:px-6 md:px-[2.5vw] bg-[#081d27] border-2 rounded-full">
                 <div className="flex items-center justify-between">
                     <motion.div
                         className="flex items-center w-full">
 
                         {/* Logo  */}
                         <motion.a variants={item} href='/' className="flex-shrink-0 md:w-fit w-full flex items-center">
-                            <motion.img className="lg:w-[10vw] md:w-[8vw] w-[20vw] rounded-full" src="Logo - white background.jpg" alt="Logo" />
+                            <motion.img className="lg:w-[3vw] md:w-[8vw] w-[10vw] rounded-full" src="marknobackground.png" alt="Logo" />
+                            <h2 className='text-[#ffc300] font-[modeka] lg:text-[2.5vw] tracking-wide'>Tipriyo</h2>
                         </motion.a>
 
 
