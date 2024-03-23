@@ -24,7 +24,7 @@ const Banner = () => {
                             <p className="lg:text-[1vw] md:text-[3vw] text-[3vw] text-neutral-950">Save <span className='font-extrabold text-[#]'>90%</span> of the Cost</p>
                         </div>
                         {/* Buttons */}
-                        <div className=" flex justify-center font-[Astro] space-x-[2vw] lg:text-[1vw] md:text-[2vw] text-[2vw]">
+                        <div className=" flex justify-center font-[Astro] space-x-[2vw] lg:text-[1vw] md:text-[2vw] text-[3vw]">
 
                             <a className="lg:py-[2vh] py-[2vh] lg:px-[1.5vw] px-[3vw] inline-flex items-center rounded-full border border-transparent bg-[#081d27] hover:bg-[#8dcae5] text-white hover:shadow-neutral-500 shadow-sm disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
                                 Get Started
