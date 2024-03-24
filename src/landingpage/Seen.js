@@ -32,23 +32,6 @@ const Seen = () => {
         },
     ]
 
-    const carouselImages = [
-
-        'home/BedroomA.jpg',
-        'home/BedroomB.jpg',
-
-        'home/DiningRoomA.jpg',
-        'home/DiningRoomB.jpg',
-
-
-        'home/HomeOfficeA.jpg',
-        'home/HomeOfficeB.jpg',
-
-
-        'home/LivingRoomA.jpg',
-        'home/LivingRoomB.jpg',
-
-    ]
 
     const steps = [
         {
@@ -79,7 +62,7 @@ const Seen = () => {
 
             <section class="text-gray-600 body-font">
                 <section class="text-gray-600 body-font">
-                    <div class="container px-[2.5vw] lg:py-[10vh] py-[5vh] mx-auto">
+                    <div class="container px-[2.5vw] lg:py-[15vh] py-[5vh] mx-auto">
                         <div class="flex flex-wrap text-center"
                             data-scroll data-scroll-speed='0.5'
                         >
@@ -100,12 +83,13 @@ const Seen = () => {
                 </section>
             </section>
 
-            <div className='lg:py-[10vh] py-[5vh]'
+            <div className='lg:py-[15vh] py-[5vh] overflow-hidden'
+                data-scroll data-scroll-speed='-0.1'
             >
                 <h1 className='lg:text-[3vw] text-[5vw] font-[Astro] uppercase font-extrabold text-center py-[2vh] tracking-wide'
                 >Tipriyo <span className='text-[#ffc300]'>Image</span> Examples</h1>
                 <MyCarousel
-                    images={carouselImages} />
+                />
             </div>
         </div>
     )

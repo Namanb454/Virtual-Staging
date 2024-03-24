@@ -7,6 +7,7 @@ import ClientServe from '../landingpage/ClientServe';
 import Video from '../landingpage/Video';
 import Header from '../components/Layout/Header';
 import Testimonials from '../landingpage/Testimonials';
+import Footer from '../components/Layout/Footer';
 
 const Home = () => {
     return (
@@ -23,14 +24,15 @@ const Home = () => {
 
             <Seen />
 
-            <Pricing />
-
             <ClientServe />
 
             <Video />
 
+            <Pricing />
+
             <Testimonials />
 
+            <Footer />
         </div>
     )
 }

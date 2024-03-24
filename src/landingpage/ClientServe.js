@@ -30,7 +30,7 @@ const ClientServe = () => {
 
     return (
         <section class="text-gray-600 body-font">
-            <div class="container px-[2.5vw] lg:py-[10vh] py-[5vh] mx-auto font-[inter] text-neutral-950">
+            <div class="container px-[2.5vw] lg:py-[15vh] py-[5vh] mx-auto font-[inter] text-neutral-950">
                 <div class="flex flex-col text-center w-full lg:mb-[5vh]"
                     data-scroll data-scroll-speed='-0.1'
                 >

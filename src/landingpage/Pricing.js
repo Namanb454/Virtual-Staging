@@ -60,8 +60,9 @@ const Pricing = () => {
                 initial='hidden'
                 animate='show'
                 id='pricing' className="scroll-smooth body-font overflow-hidden">
-                <div className="container px-5 lg:py-[10vh] py-[5vh] mx-auto">
+                <div className="container px-5 lg:py-[15vh] py-[5vh] mx-auto">
                     <motion.div
+                        data-scroll data-scroll-speed='-0.1'
                         className="flex flex-col text-center w-full mb-[5vh]">
 
                         <motion.h1
