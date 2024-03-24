@@ -89,8 +89,8 @@ const Seen = () => {
                                     <div class="md:w-1/4 sm:w-1/2 w-full">
                                         <div class="px-4 py-6 rounded-lg space-y-[3vh]">
                                             <h2 className='lg:text-[5vw] text-[10vw] mx-auto w-fit text-[#013147c9] font-normal'>{data.step}</h2>
-                                            <h2 class="title-font text-neutral-950 lg:text-[2vw] text-[5vw] font-extrabold font-[baguile]">{data.title}</h2>
-                                            <p class="leading-relaxed font-[Modeka] lg:text-[1.4vw] text-justify font-bold text-[#013147c9]">{data.desc}</p>
+                                            <h2 class="title-font text-neutral-950 lg:text-[2vw] text-[5vw] font-[900] font-[modeka]">{data.title}</h2>
+                                            <p class="leading-relaxed font-[poppins] lg:text-[1.4vw] text-justify font-bold text-[#013147c9]">{data.desc}</p>
                                         </div>
                                     </div>
                                 )

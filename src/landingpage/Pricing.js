@@ -91,13 +91,13 @@ const Pricing = () => {
                                             transition={{ duration: 0.5 * index }}
                                             viewport={{ once: true }}
                                             className="bg-[#fcfcea] lg:w-[25vw] lg:h-[60vh] h-[50vh] text-center text-[#013147c9] rounded-2xl shadow-md shadow-gray-300 border-">
-                                            <div className="py-[4vh] font-[baguile] tracking-wide font-bold">
+                                            <div className="py-[4vh] font-[modeka] tracking-wide font-bold">
                                                 <h4 className="lg:text-[2vw] text-[5vw]">{data.title}</h4>
                                             </div>
 
-                                            <div className="lg:py-[2vh] font-[baguile] tracking-widest">
+                                            <div className="lg:py-[2vh] font-[poppins] tracking-widest">
                                                 <span className="font-bold lg:text-[2vw] text-[6vw] text-[#081d27]">
-                                                    <span className='font-[baguile]'>&#8377;{data.price}</span>/image
+                                                    <span className=''>&#8377;{data.price}</span>/image
                                                 </span>
                                             </div>
 
@@ -111,7 +111,7 @@ const Pricing = () => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className="lg:px-[5vw] lg:py-[2vh] px-[20vw] py-[5vh] font-[baguile]">
+                                            <div className="lg:px-[5vw] lg:py-[2vh] px-[20vw] py-[5vh] font-[poppins]">
                                                 <a className="py-3 px-4 w-full inline-flex justify-center items-center gap-x-2 lg:text-[1.4vw] text-[3vw] font-semibold rounded-lg border border-[#209dbb] text-[#081d27] hover:border-87c0d9 hover:text-[#87c0d9] hover:bg-[#081d27] disabled:opacity-50 disabled:pointer-events-none  dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 transition-all duration-300" href="/">
                                                     Sign up
                                                 </a>

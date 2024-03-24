@@ -6,6 +6,7 @@ import Pricing from '../landingpage/Pricing';
 import ClientServe from '../landingpage/ClientServe';
 import Video from '../landingpage/Video';
 import Header from '../components/Layout/Header';
+import Testimonials from '../landingpage/Testimonials';
 
 const Home = () => {
     return (
@@ -27,6 +28,8 @@ const Home = () => {
             <ClientServe />
 
             <Video />
+
+            <Testimonials />
 
         </div>
     )

@@ -19,7 +19,7 @@ const MyCarousel = ({ images }) => {
         <div className="relative"
             data-scroll data-scroll-speed='0.6'
         >
-            <div className="lg:flex lg:text-[1.5vw] font-[Modeka] justify-center items-center lg:space-x-[1.5vw] lg:space-y-0 space-y-[3vh]">
+            <div className="lg:flex lg:text-[1.5vw] font-[poppins] justify-center items-center lg:space-x-[1.5vw] lg:space-y-0 space-y-[3vh]">
                 <div>
                     <h2 className='w-[45vw] text-center mx-auto font-bold'>
                         Before Tipriyo

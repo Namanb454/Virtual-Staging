@@ -50,8 +50,8 @@ const ClientServe = () => {
                                     viewport={{ once: true }}
                                     class="bg-[#fcfcea] hover:bg-[#209dbb] hover:transition-all ease-in-out duration-400 h-full rounded-3xl shadow-md border-2 border-gray-200 lg:px-[2vw] px-[5vw] lg:py-[3vh] py-[5vh] group">
                                     <h2 className='w-fit mx-auto lg:text-[5vw] text-[10vw] group-hover:text-white text-[#013147c9]'>{data.img}</h2>
-                                    <h2 class="title-font font-[baguile] lg:text-[2vw] text-[5vw] py-[2vh] group-hover:text-white">{data.title}</h2>
-                                    <p class="leading-relaxed text-[#013147c9] lg:text-[1.2vw] text-justify group-hover:text-white">{data.desc}</p>
+                                    <h2 class="title-font font-[modeka] lg:text-[2vw] text-[5vw] py-[2vh] group-hover:text-white">{data.title}</h2>
+                                    <p class="font-[poppins] leading-relaxed text-[#013147c9] lg:text-[1.2vw] text-justify group-hover:text-white">{data.desc}</p>
                                 </motion.div>
                             </div>
                         )

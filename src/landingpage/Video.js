@@ -12,7 +12,7 @@ const Video = () => {
                 <iframe className=' lg:w-[55vw] w-[80vw] lg:h-[60vh] h-[50vh] mx-auto' src="https://www.youtube.com/embed/ZhitB6Q9O9g?si=HILe0VyShAr5if2T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
 
-            <button className='text-[#013147c9] rounded-full bg-white px-[1vw] py-[1.5vh] w-fit font-bold font-[baguile] shadow-lg hover:shadow-[#081d27] transition-all duration-300'>
+            <button className='text-[#013147c9] rounded-full bg-white px-[1vw] py-[1.5vh] w-fit font-bold font-[poppins] shadow-lg hover:shadow-[#081d27] transition-all duration-300'>
                 Generate your first image
             </button>
         </div>
