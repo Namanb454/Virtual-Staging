@@ -3,8 +3,9 @@ import React from 'react'
 const Video = () => {
     return (
         <div
+            id='video'
             data-scroll data-scroll-speed='-0.1'
-            id='video' className='py-[15vh] w-[100%] mx-auto text-center text-white bg-gradient-to-br from-[#081d27] from-[50%] to-[#87c0d9]'
+            className='py-[15vh] w-[100%] mx-auto text-center text-white bg-gradient-to-br from-[#081d27] from-[50%] to-[#87c0d9]'
         >
             <div
                 data-scroll data-scroll-speed='0.9'
