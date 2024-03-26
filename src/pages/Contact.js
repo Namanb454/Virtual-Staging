@@ -1,11 +1,30 @@
 import React from 'react'
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
+    const item = {
+        hidden: {
+            opacity: 0,
+            y: -50,
+        },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                // duration: 0.1,
+            },
+        },
+    };
     return (
         <div>
             <div className="max-w-screen-lg mx-auto p-5">
                 <div className="grid grid-cols-1 md:grid-cols-12 border">
                     <div className="bg-[#081d27] md:col-span-4 p-10 text-white">
+                        <Link to='/' className="flex-shrink-0 md:w-fit w-full flex items-center">
+                            <motion.img className="lg:w-[3vw] md:w-[8vw] w-[10vw] rounded-full" src="marknobackground.png" alt="Logo" />
+                            <h2 className='text-[#ffc300] font-[modeka] font-bold lg:text-[2.5vw] text-[7vw] tracking-wide'>Tipriyo</h2>
+                        </Link>
                         <p className="my-2 leading-7 font-bold text-[1.4vw] tracking-wider uppercase font-[modeka]">
                             Contact
                         </p>
