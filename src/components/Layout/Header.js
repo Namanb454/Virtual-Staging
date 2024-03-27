@@ -86,7 +86,7 @@ export default function Header() {
                         {/* Logo  */}
                         <motion.a variants={item} href='/' className="flex-shrink-0 md:w-fit w-full flex items-center">
                             <motion.img className="lg:w-[3vw] md:w-[8vw] w-[10vw] rounded-full" src="marknobackground.png" alt="Logo" />
-                            <h2 className='text-[#ffc300] font-[modeka] font-bold lg:text-[2.5vw] text-[7vw] tracking-wide'>Tipriyo</h2>
+                            <h2 className='text-[#ffc300] font-[SanAntycs] font-normal lg:text-[2.5vw] text-[7vw] tracking-wide'>Tipriyo</h2>
                         </motion.a>
 
                         <div className="hidden lg:block w-fit ml-auto">
@@ -97,7 +97,7 @@ export default function Header() {
                                 {navs.map((data, index) => {
                                     return (
                                         <Link to={data.link} variants={item}
-                                            className={`font-[poppins] w-[9vw] text-[#8dcae5] 
+                                            className={`font-[SanAntycs] w-[9vw] text-[#ffffef] 
                                         hover:bg-neutral-700 hover:text-white px-[1vw] py-[2vh] rounded-full text-[1.3vw] font- flex items-center space-x-[1vw] shadow-neutral-500 shadow-
                                                  ${index === 3 && 'bg-[#9DB2BF] hover:bg-blue-500'}
                                         `}>

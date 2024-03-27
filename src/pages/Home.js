@@ -11,7 +11,7 @@ import Footer from '../components/Layout/Footer';
 
 const Home = () => {
     return (
-        <div title={"Tipriyo-Home "} className='bg-[#ffffef]'>
+        <div title={"Tipriyo-Home "} className=''>
             <div className='bg-cover h-screen bg-fixed'
                 style={{
                     backgroundImage: 'url("home/LivingRoomB.jpg")'
