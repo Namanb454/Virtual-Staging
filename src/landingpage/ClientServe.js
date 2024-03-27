@@ -34,7 +34,7 @@ const ClientServe = () => {
                 <div class="flex flex-col text-center w-full lg:mb-[5vh]"
                 // data-scroll data-scroll-speed='-0.1'
                 >
-                    <h1 class="lg:w-[80%] 2xl:w-[60%] mx-auto lg:text-[3vw] text-[5vw] font-bold title-font mb-5 text-[#081d27] font-[Astro] capitalize">Our users <span className='text-[#ffc300]'>include</span></h1>
+                    <h1 class="lg:w-[80%] 2xl:w-[60%] mx-auto lg:text-[3vw] text-[6vw] font-bold title-font mb-5 text-[#081d27] font-[SanAntycs] capitalize">Our users <span className='text-[#ffc300]'>include</span></h1>
                 </div>
 
                 <div class="flex flex-wrap text-center lg:py-[5vh] font-[modeka] font-bold"
@@ -48,7 +48,7 @@ const ClientServe = () => {
                                     whileInView={{ scale: 1, y: 0 }}
                                     transition={{ duration: 0.4 * index }}
                                     viewport={{ once: true }}
-                                    class="bg-[#fffef9] hover:bg-[#209dbb] hover:transition-all ease-in-out duration-400 h-full rounded-3xl shadow-md border-2 border-gray-200 lg:px-[2vw] px-[5vw] lg:py-[3vh] py-[5vh] group">
+                                    class="bg-[#fffef9] hover:bg-[#209dbb] transition-all duration-300 h-full rounded-3xl shadow-md border-2 border-gray-200 lg:px-[2vw] px-[5vw] lg:py-[3vh] py-[5vh] group">
 
                                     <div className='w-[100%] lg:h-[15vh] h-[10vh]'>
                                         <img src={data.img}
@@ -56,7 +56,7 @@ const ClientServe = () => {
                                         />
                                     </div>
 
-                                    <h2 class="title-font font-[modeka] lg:text-[2vw] text-[5vw] py-[2vh] group-hover:text-white">{data.title}</h2>
+                                    <h2 class="title-font font-[SanAntycs] lg:text-[2vw] text-[5vw] py-[2vh] group-hover:text-white">{data.title}</h2>
                                     <p class="font-[poppins] leading-relaxed text-[#013147c9] lg:text-[1.2vw] text-justify group-hover:text-white">{data.desc}</p>
                                 </motion.div>
                             </div>

@@ -97,9 +97,9 @@ export default function Header() {
                                 {navs.map((data, index) => {
                                     return (
                                         <Link to={data.link} variants={item}
-                                            className={`font-[SanAntycs] w-[9vw] text-[#ffffef] 
-                                        hover:bg-neutral-700 hover:text-white px-[1vw] py-[2vh] rounded-full text-[1.3vw] font- flex items-center space-x-[1vw] shadow-neutral-500 shadow-
-                                                 ${index === 3 && 'bg-[#9DB2BF] hover:bg-blue-500'}
+                                            className={`font-[SanAntycs] w-[9vw] text-white 
+                                        hover:bg-[#013147c9] hover:text-white px-[1vw] py-[2vh] rounded-full text-[1.3vw] font- flex items-center space-x-[1vw] shadow-neutral-500 shadow-
+                                                 
                                         `}>
                                             <span>
                                                 {data.nav}

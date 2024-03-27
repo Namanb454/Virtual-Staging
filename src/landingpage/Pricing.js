@@ -81,11 +81,11 @@ const Pricing = () => {
 
                         <motion.h1
                             variants={item}
-                            className="lg:w-[80%] 2xl:w-[60%] mx-auto lg:text-[3vw] text-[5vw] font-bold title-font mb-5 text-[#081d27] font-[Astro] capitalize">
+                            className="lg:w-[80%] w-[90%] mx-auto lg:text-[3vw] text-[6vw] font-bold title-font mb-5 text-[#081d27] font-[SanAntycs] capitalize">
                             Make Your Interior Design Vision a Reality with <span className='text-[#ffc300]'>Tipriyo AI</span></motion.h1>
                         <motion.p
                             variants={item}
-                            className="font-[Modeka] lg:w-[50vw] tracking-wide font-semibold mx-auto leading-relaxed lg:text-[1.5vw] px-2 text-[#013147c9]">It’s easy to use and you’ll see results in as little as 30 seconds</motion.p>
+                            className="font-[SanAntycs] lg:w-[50vw] w-[80%] tracking-wide font-semibold mx-auto leading-relaxed lg:text-[1.5vw] px-2 text-[#013147c9]">It’s easy to use and you’ll see results in as little as 30 seconds</motion.p>
 
 
                     </motion.div>
@@ -105,16 +105,16 @@ const Pricing = () => {
                                             whileInView={{ scale: 1, y: 0 }}
                                             transition={{ duration: 0.5 * index }}
                                             viewport={{ once: true }}
-                                            className={`bg lg:w-1/4 lg:h-[70vh] h-[50vh] text-center text-[#013147c9] rounded-2xl shadow-md shadow-gray-300 border-2
-                                            ${index === 3 && 'border-[#013147c9] lg:h-[75vh]'}
+                                            className={`bg lg:w-1/4 lg:h-[70vh] h-[50vh] text-center text-[#013147c9] rounded-2xl shadow-md shadow-gray-300 border-2 hover:border-[#013147c9] transition-all duration-300
+                                            ${index === 3 && 'border-[#013147c9] lg:h-[75vh] h-[55vh]'}
                                             `}>
 
-                                            <h4 className={`lg:text-[1.2vw] text-[5vw] rounded-md text-left font-semibold bg-[#87c0d9] text-[#081d27] w-fit 
+                                            <h4 className={`lg:text-[1vw] text-[3vw] rounded-md text-left font-semibold bg-[#87c0d9] text-[#081d27] w-fit font-[poppins]
                                             ${index === 3 && 'px-2 py-1 mx-auto my-2'}
                                             `}>{data.popular}
                                             </h4>
 
-                                            <div className="py-[2vh] font-[modeka] tracking-wide font-bold">
+                                            <div className="py-[2vh] font-[SanAntycs] tracking-wide font-bold">
                                                 <h4 className="lg:text-[2vw] text-[5vw]">Pricing for Tipriyo</h4>
                                             </div>
 
@@ -124,8 +124,8 @@ const Pricing = () => {
                                                 </span>
                                             </div>
 
-                                            <div className=" flex justify-center py-[3.5vh] font-[modeka] font-bold">
-                                                <ul className="space-y-[2vh] text-left lg:text-[1.5vw]">
+                                            <div className=" flex justify-center py-[3.5vh] font-[poppins]">
+                                                <ul className="space-y-[2vh] text-left lg:text-[1.2vw]">
                                                     <li className="">
                                                         1. All furniture styles
                                                     </li>
@@ -137,8 +137,8 @@ const Pricing = () => {
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div className="lg:px-[5vw] lg:py-[2vh] px-[20vw] py-[5vh] font-[poppins]">
-                                                <a className={`py-3 px-4 w-full inline-flex justify-center items-center gap-x-2 lg:text-[1.4vw] text-[3vw] font-semibold rounded-lg border border-[#209dbb] text-[#081d27] hover:border-87c0d9 hover:text-[#87c0d9] hover:bg-[#081d27] disabled:opacity-50 disabled:pointer-events-none  dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 transition-all duration-300
+                                            <div className="lg:px-[5vw] lg:py-[2vh] px-[20vw] py-[5vh] font-[SanAntycs] tracking-wider ">
+                                                <a className={`py-3 px-4 w-full inline-flex justify-center items-center gap-x-2 lg:text-[1.4vw] text-[4vw] font-bold rounded-lg border border-[#209dbb] text-[#081d27] hover:border-87c0d9 hover:text-[#87c0d9] hover:bg-[#081d27] disabled:opacity-50 disabled:pointer-events-none  dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 transition-all duration-300
                                                 ${index === 3 && 'bg-[#081d27] text-white'}
                                                 `} href="/">
                                                     Sign up

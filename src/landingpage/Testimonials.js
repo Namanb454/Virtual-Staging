@@ -15,7 +15,7 @@ const Testimonials = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1400,
+        autoplaySpeed: 4000,
         responsive: [
             {
                 breakpoint: 1024,
@@ -81,13 +81,13 @@ const Testimonials = () => {
     return (
         <div className="w-full lg:flex mt-8 overflow-x-hidden px-10 bg-gradient-to-br from-[#081d27] from-[50%] to-[#87c0d9] lg:py-[15vh] py-[5vh]">
             <div
-                data-scroll data-scroll-speed='-0.1'
-                className='lg:w-[50%] lg:text-left text-center p-10 my-auto'>
-                <h1 className='text-white lg:text-[3vw] text-[5vw] font-[astro] font-bold w-[100%] capitalize'>What our customers <span className='text-[#ffc300]'>think</span></h1>
+                // data-scroll data-scroll-speed='-0.1'
+                className='lg:w-[50%] lg:text-left text-center lg:p-10 py-10 my-auto'>
+                <h1 className='text-white lg:text-[3vw] text-[6vw] font-[SanAntycs] font-bold w-[100%] capitalize'>What our customers <span className='text-[#ffc300]'>think</span></h1>
             </div>
 
             <div className='lg:w-[50%] h-[100vh] lg:px-[5vw] py-[5%] rounded-2xl'
-                data-scroll data-scroll-speed='0.9'
+            // data-scroll data-scroll-speed='0.9'
             >
                 <Slider {...settings}>
                     {testi.map((testimonial) => (
@@ -96,7 +96,7 @@ const Testimonials = () => {
                             whileInView={{ x: 0, opacity: 1 }}
                             transition={{ duration: 1.2 }}
                             key={testimonial.id} className="py-[4vh] w-[100vw]">
-                            <div className="bg-[#fcfcea] rounded-lg shadow-lg shadow-[#081d27] mx-auto lg:w-[30vw] w-[100%] lg:h-[80vh] h-[60vh] py-[5vh]">
+                            <div className="bg-white rounded-lg shadow-lg shadow-[#081d27] mx-auto lg:w-[30vw] w-[100%] lg:h-[80vh] h-[60vh] py-[5vh]">
                                 {/* <p className="text-lg font-medium mb-4">{testimonial.quote}</p> */}
                                 <div className="items-center space-y-[3vh]">
                                     <div className="flex-shrink-0 lg:w-[10vw] w-[25vw] mx-auto">
@@ -108,7 +108,7 @@ const Testimonials = () => {
                                     </div>
                                     <div className="text-center lg:px-[2vw] px-[4vw] space-y-[3vh]">
                                         <p className="lg:text-[1.3vw] text-[5vw] font-bold font-[poppins] capitalize ">{testimonial.name}</p>
-                                        <p className="lg:text-[1.5vw] text-[4vw] text-[#081d27] text-justify font-serif italic">{testimonial.desc}</p>
+                                        <p className="lg:text-[1.5vw] text-[4vw] text-[#081d27] text-justify font-semibold font-[SanAntycs]">{testimonial.desc}</p>
                                     </div>
                                 </div>
                             </div>

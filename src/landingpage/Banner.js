@@ -59,12 +59,12 @@ const Banner = () => {
                             variants={item}
                             className="font-[SanAntycs] font-medium tracking-wide"
                         >
-                            <p className="lg:text-[2.1vw] md:text-[3vw] text-[3vw] text-[#081d27]">Save <span className='lg:text-[2.2vw] font-extrabold text-[#]'>90%</span> of the Cost</p>
+                            <p className="lg:text-[2.1vw] md:text-[3vw] text-[6vw] text-[#081d27]">Save <span className='lg:text-[2.2vw] font-extrabold text-[#]'>90%</span> of the Cost</p>
                         </motion.div>
                         {/* Buttons */}
                         <motion.div
                             variants={item}
-                            className=" flex justify-center font-[SanAntycs] space-x-[2vw] lg:text-[1.4vw] md:text-[2vw] text-[3vw] tracking-wide"
+                            className=" flex justify-center font-[SanAntycs] space-x-[2vw] lg:text-[1.4vw] md:text-[2vw] text-[4vw] tracking-wide"
                         >
 
                             <a className="lg:py-[2vh] py-[2vh] lg:px-[1.5vw] px-[3vw] inline-flex items-center rounded-full border border-transparent bg-[#081d27] text-[#ffffef] hover:shadow-[#081d27] shadow-md disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">

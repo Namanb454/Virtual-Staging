@@ -67,7 +67,7 @@ const Seen = () => {
 
             <section class="text-gray-600 body-font lg:py-[15vh] py-[5vh]">
                 <section class="text-gray-600 body-font">
-                    <h1 className='lg:text-[3vw] text-[5vw] font-[Astro] uppercase font-extrabold text-center py-[2vh] tracking-wide'
+                    <h1 className='lg:text-[3vw] text-[6vw] font-[SanAntycs] uppercase font-extrabold text-center py-[2vh] tracking-wide'
                     >How <span className='text-[#ffc300]'>To</span></h1>
                     <div class="container px-[2.5vw] lg:py-[10vh] py-[10] mx-auto">
                         <div class="flex flex-wrap text-center"
@@ -95,7 +95,7 @@ const Seen = () => {
             <div className='lg:py-[] py-[5vh] overflow-hidden h-screen'
             // data-scroll data-scroll-speed='0.5'
             >
-                <h1 className='lg:text-[3vw] text-[5vw] font-[Astro] uppercase font-extrabold text-center py-[2vh] tracking-wide'
+                <h1 className='lg:text-[3vw] text-[6vw] font-[SanAntycs] uppercase font-extrabold text-center py-[2vh] tracking-wide'
                 >Before <span className='text-[#ffc300]'>And</span> After</h1>
                 <MyCarousel
                 />
