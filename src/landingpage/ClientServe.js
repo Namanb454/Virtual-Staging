@@ -46,7 +46,7 @@ const ClientServe = () => {
                                 <motion.div
                                     initial={{ scale: 0, y: 100 }}
                                     whileInView={{ scale: 1, y: 0 }}
-                                    transition={{ duration: 0.4 * index }}
+                                    transition={{ duration: 0.1 * index }}
                                     viewport={{ once: true }}
                                     class="bg-[#fffef9] hover:bg-[#209dbb] transition-all duration-300 h-full rounded-3xl shadow-md border-2 border-gray-200 lg:px-[2vw] px-[5vw] lg:py-[3vh] py-[5vh] group">
 

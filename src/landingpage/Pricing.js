@@ -103,7 +103,7 @@ const Pricing = () => {
                                         <motion.div
                                             initial={{ scale: 0, y: 100 }}
                                             whileInView={{ scale: 1, y: 0 }}
-                                            transition={{ duration: 0.5 * index }}
+                                            transition={{ duration: 0.1 * index }}
                                             viewport={{ once: true }}
                                             className={`bg lg:w-1/4 lg:h-[70vh] h-[50vh] text-center text-[#013147c9] rounded-2xl shadow-md shadow-gray-300 border-2 hover:border-[#013147c9] transition-all duration-300
                                             ${index === 3 && 'border-[#013147c9] lg:h-[75vh] h-[55vh]'}
