@@ -55,7 +55,7 @@ const Seen = () => {
             'step': <GrPowerCycle />,
         },
         {
-            'title': '4. Download',
+            'title': '5. Download',
             'desc': "Download your favorite images. No watermark with subscription.",
             'step': <GrPowerCycle />,
         },
@@ -65,11 +65,13 @@ const Seen = () => {
 
             {/* <h1 className='text-neutral-950 lg:text-[3.2vw] text-[10vw] font-[lexend] text-center'>As seen in</h1> */}
 
-            <section class="text-gray-600 body-font h-screen lg:py-[15vh] py-[5vh]">
+            <section class="text-gray-600 body-font lg:py-[15vh] py-[5vh]">
                 <section class="text-gray-600 body-font">
+                    <h1 className='lg:text-[3vw] text-[5vw] font-[Astro] uppercase font-extrabold text-center py-[2vh] tracking-wide'
+                    >How <span className='text-[#ffc300]'>To</span></h1>
                     <div class="container px-[2.5vw] lg:py-[10vh] py-[10] mx-auto">
                         <div class="flex flex-wrap text-center"
-                            data-scroll data-scroll-speed='0.5'
+                        // data-scroll data-scroll-speed='0.5'
                         >
 
                             {steps.map(data => {
@@ -90,11 +92,11 @@ const Seen = () => {
                 </section>
             </section>
 
-            <div className='lg:py-[15vh] py-[5vh] overflow-hidden h-screen'
-                data-scroll data-scroll-speed='-0.1'
+            <div className='lg:py-[] py-[5vh] overflow-hidden h-screen'
+            // data-scroll data-scroll-speed='0.5'
             >
                 <h1 className='lg:text-[3vw] text-[5vw] font-[Astro] uppercase font-extrabold text-center py-[2vh] tracking-wide'
-                >Tipriyo <span className='text-[#ffc300]'>Image</span> Examples</h1>
+                >Before <span className='text-[#ffc300]'>And</span> After</h1>
                 <MyCarousel
                 />
             </div>

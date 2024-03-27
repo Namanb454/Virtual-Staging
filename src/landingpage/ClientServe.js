@@ -6,50 +6,56 @@ import { motion } from 'framer-motion';
 const ClientServe = () => {
     const data = [
         {
-            'img': <MdAddAPhoto />,
+            'img': 'camera-icon.png',
             'title': 'Photographers',
-            'desc': 'Service your customers with staged images for a fraction of the price and speed of traditional virtual staging'
+            'desc': "Photographers who offer virtual staging services book more photoshoots and retain a greater number of clients - Tipriyo’s AI makes that service all the more affordable."
         },
         {
-            'img': <MdSupportAgent />,
+            'img': 'interior-icon.png',
+            'title': 'Interior Design',
+            'desc': 'Interior Design is a tough job and clients are demanding. Tipriyo’s AI is the perfect tool to help guide interior design clients on different aesthetics and allows interior designers focus on achieving their clients’ visions.'
+        },
+        {
+            'img': "real-estate-agent-realtor-icon.png",
             'title': 'Agents & Brokers',
-            'desc': 'Increase the price that you sell a listing by helping buyers imagine what their home would look like'
+            'desc': 'Prospects buy or rent homes when they can see themselves living in it. Tipriyo’s AI virtual staging allows realtors to shorten the sales cycle - and for up to 10% more in price.'
 
         },
-        {
-            'img': <GrUserManager />,
-            'title': 'Interior Design',
-            'desc': 'Increase foot traffic to your listing and your rental price. Avoid reusing images of different units that share the same floor plan and having your listing down ranked by platforms like Zillow and Redfin.'
-        },
-        {
-            'img': <HiOutlineDotsCircleHorizontal />,
-            'title': 'Others',
-            'desc': 'Many other types of real estate professionals have found value in our platform.  Give it a try or get in touch to learn more!'
-        },
+        // {
+        //     'img': <HiOutlineDotsCircleHorizontal />,
+        //     'title': 'Others',
+        //     'desc': 'Many other types of real estate professionals have found value in our platform.  Give it a try or get in touch to learn more!'
+        // },
     ]
 
     return (
         <section class="text-gray-600 body-font">
             <div class="container px-[2.5vw] lg:py-[15vh] py-[5vh] mx-auto font-[inter] text-neutral-950">
                 <div class="flex flex-col text-center w-full lg:mb-[5vh]"
-                    data-scroll data-scroll-speed='-0.1'
+                // data-scroll data-scroll-speed='-0.1'
                 >
-                    <h1 class="lg:w-[80%] 2xl:w-[60%] mx-auto lg:text-[3vw] text-[5vw] font-bold title-font mb-5 text-[#081d27] font-[Astro] capitalize">Our <span className='text-[#ffc300]'>Clients</span></h1>
+                    <h1 class="lg:w-[80%] 2xl:w-[60%] mx-auto lg:text-[3vw] text-[5vw] font-bold title-font mb-5 text-[#081d27] font-[Astro] capitalize">Our users <span className='text-[#ffc300]'>include</span></h1>
                 </div>
 
                 <div class="flex flex-wrap text-center lg:py-[5vh] font-[modeka] font-bold"
-                    data-scroll data-scroll-speed='0.5'
+                // data-scroll data-scroll-speed='0.1'
                 >
                     {data.map((data, index) => {
                         return (
-                            <div class=" p-[2vh] lg:w-[25%] md:w-[25%] w-full ">
+                            <div class=" p-[5vh] lg:w-1/3 md:w-[25%] w-full ">
                                 <motion.div
-                                    initial={{ scale: 0, y:100 }}
-                                    whileInView={{ scale: 1, y:0 }}
-                                    transition={{duration: 0.4 * index}}
+                                    initial={{ scale: 0, y: 100 }}
+                                    whileInView={{ scale: 1, y: 0 }}
+                                    transition={{ duration: 0.4 * index }}
                                     viewport={{ once: true }}
-                                    class="bg-[#fcfcea] hover:bg-[#209dbb] hover:transition-all ease-in-out duration-400 h-full rounded-3xl shadow-md border-2 border-gray-200 lg:px-[2vw] px-[5vw] lg:py-[3vh] py-[5vh] group">
-                                    <h2 className='w-fit mx-auto lg:text-[5vw] text-[10vw] group-hover:text-white text-[#013147c9]'>{data.img}</h2>
+                                    class="bg-[#fffef9] hover:bg-[#209dbb] hover:transition-all ease-in-out duration-400 h-full rounded-3xl shadow-md border-2 border-gray-200 lg:px-[2vw] px-[5vw] lg:py-[3vh] py-[5vh] group">
+
+                                    <div className='w-[100%] lg:h-[15vh] h-[10vh]'>
+                                        <img src={data.img}
+                                            className='lg:w-[5vw] w-[15vw] mx-auto'
+                                        />
+                                    </div>
+
                                     <h2 class="title-font font-[modeka] lg:text-[2vw] text-[5vw] py-[2vh] group-hover:text-white">{data.title}</h2>
                                     <p class="font-[poppins] leading-relaxed text-[#013147c9] lg:text-[1.2vw] text-justify group-hover:text-white">{data.desc}</p>
                                 </motion.div>

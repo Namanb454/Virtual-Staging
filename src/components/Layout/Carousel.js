@@ -15,7 +15,7 @@ const MyCarousel = () => {
         slidesToShow: 2,
         slidesToScroll: 2,
         autoplay: true,
-        autoplaySpeed: 1400,
+        autoplaySpeed: 4000,
         responsive: [
             {
                 breakpoint: 1024,
@@ -55,7 +55,7 @@ const MyCarousel = () => {
 
     return (
         <div
-            data-scroll data-scroll-speed='0.6'
+        // data-scroll data-scroll-speed='0.6'
         >
             <Slider {...settings} className='lg:space-x-[1.5vw]'>
                 {carouselImages.map((images) => (
