@@ -3,6 +3,7 @@ import { BsCloudUpload } from "react-icons/bs";
 import { BiPointer } from "react-icons/bi";
 import { GoChecklist } from "react-icons/go";
 import { GrPowerCycle } from "react-icons/gr";
+import { IoCloudDownloadOutline } from "react-icons/io5";
 import MyCarousel from '../components/Layout/Carousel';
 const Seen = () => {
     const data = [
@@ -57,7 +58,7 @@ const Seen = () => {
         {
             'title': '5. Download',
             'desc': "Download your favorite images. No watermark with subscription.",
-            'step': <GrPowerCycle />,
+            'step': <IoCloudDownloadOutline  />,
         },
     ]
     return (
