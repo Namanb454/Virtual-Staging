@@ -82,7 +82,7 @@ const Seen = () => {
                                     >
                                         <div class="px-4 py-6 rounded-lg space-y-[3vh]">
                                             <h2 className='lg:text-[5vw] text-[10vw] mx-auto w-fit text-[#013147c9] font-normal'>{data.step}</h2>
-                                            <h2 class="title-font text-neutral-950 lg:text-[2vw] text-[5vw] font-[900] font-[SanAntycs]">{data.title}</h2>
+                                            <h2 class="title-font text-[#081d27] lg:text-[2vw] text-[5vw] font-[900] font-[SanAntycs]">{data.title}</h2>
                                             <p class="leading-relaxed font-[poppins] lg:text-[1.1vw] text-justify font-bold text-[#013147c9]">{data.desc}</p>
                                         </div>
                                     </div>
@@ -93,7 +93,7 @@ const Seen = () => {
                 </section>
             </section>
 
-            <div className='lg:py-[] py-[5vh] overflow-hidden h-screen'
+            <div className='lg:py-[] py-[5vh] overflow-hidden h-screen text-[#081d27]'
             // data-scroll data-scroll-speed='0.5'
             >
                 <div className='flex lg:text-[3vw] text-[6vw] font-[SanAntycs]'>

@@ -56,7 +56,7 @@ const ClientServe = () => {
                                         />
                                     </div>
 
-                                    <h2 class="title-font font-[SanAntycs] lg:text-[2vw] text-[5vw] py-[2vh] group-hover:text-white">{data.title}</h2>
+                                    <h2 class="title-font font-[SanAntycs] lg:text-[2vw] text-[5vw] py-[2vh] group-hover:text-white text-[#081d27]">{data.title}</h2>
                                     <p class="font-[poppins] leading-relaxed text-[#013147c9] lg:text-[1.2vw] text-justify group-hover:text-white">{data.desc}</p>
                                 </motion.div>
                             </div>
