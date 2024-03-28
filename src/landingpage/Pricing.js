@@ -53,7 +53,7 @@ const Pricing = () => {
             'time': 'Weeks',
             'price': '1,099',
             'credit': '10 credits',
-            'popular': ''
+            'popular': 'Most Popular'
         },
         {
             // 'title': 'Physical Staging',
@@ -61,7 +61,7 @@ const Pricing = () => {
             'time': 'Weeks',
             'price': '3,000',
             'credit': '25 credits',
-            'popular': 'Most Popular'
+            'popular': ''
         },
     ]
 
@@ -106,11 +106,11 @@ const Pricing = () => {
                                             transition={{ duration: 0.1 * index }}
                                             viewport={{ once: true }}
                                             className={`bg lg:w-1/4 lg:h-[70vh] h-[50vh] text-center text-[#013147c9] rounded-2xl shadow-md shadow-gray-300 border-2 hover:border-[#013147c9] transition-all duration-300
-                                            ${index === 3 && 'border-[#013147c9] lg:h-[75vh] h-[55vh]'}
+                                            ${index === 2 && 'border-[#013147c9] lg:h-[75vh] h-[55vh]'}
                                             `}>
 
                                             <h4 className={`lg:text-[1vw] text-[3vw] rounded-md text-left font-semibold bg-[#87c0d9] text-[#081d27] w-fit font-[poppins]
-                                            ${index === 3 && 'px-2 py-1 mx-auto my-2'}
+                                            ${index === 2 && 'px-2 py-1 mx-auto my-2'}
                                             `}>{data.popular}
                                             </h4>
 
@@ -139,7 +139,7 @@ const Pricing = () => {
                                             </div>
                                             <div className="lg:px-[5vw] lg:py-[2vh] px-[20vw] py-[5vh] font-[SanAntycs] tracking-wider ">
                                                 <a className={`py-3 px-4 w-full inline-flex justify-center items-center gap-x-2 lg:text-[1.4vw] text-[4vw] font-bold rounded-lg border border-[#209dbb] text-[#081d27] hover:border-87c0d9 hover:text-[#87c0d9] hover:bg-[#081d27] disabled:opacity-50 disabled:pointer-events-none  dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 transition-all duration-300
-                                                ${index === 3 && 'bg-[#081d27] text-white'}
+                                                ${index === 2 && 'bg-[#081d27] text-white'}
                                                 `} href="/">
                                                     Sign up
                                                 </a>

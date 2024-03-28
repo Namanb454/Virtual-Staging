@@ -6,14 +6,14 @@ import { motion } from 'framer-motion';
 const ClientServe = () => {
     const data = [
         {
-            'img': 'camera-icon.png',
-            'title': 'Photographers',
-            'desc': "Photographers who offer virtual staging services book more photoshoots and retain a greater number of clients - Tipriyo’s AI makes that service all the more affordable."
-        },
-        {
             'img': 'interior-icon.png',
             'title': 'Interior Design',
             'desc': 'Interior Design is a tough job and clients are demanding. Tipriyo’s AI is the perfect tool to help guide interior design clients on different aesthetics and allows interior designers focus on achieving their clients’ visions.'
+        },
+        {
+            'img': 'camera-icon.png',
+            'title': 'Photographers',
+            'desc': "Photographers who offer virtual staging services book more photoshoots and retain a greater number of clients - Tipriyo’s AI makes that service all the more affordable."
         },
         {
             'img': "real-estate-agent-realtor-icon.png",
