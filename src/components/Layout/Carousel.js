@@ -9,19 +9,20 @@ const MyCarousel = () => {
 
     const settings = {
         dots: true,
-        arrow: false,
+        arrows: false,
         infinite: true,
         speed: 500,
         slidesToShow: 2,
         slidesToScroll: 2,
         autoplay: true,
+        // variableWidth: true,
         autoplaySpeed: 4000,
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1,
+                    slidesToScroll: 2,
                 },
             },
             {

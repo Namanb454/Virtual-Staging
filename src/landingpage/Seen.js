@@ -58,7 +58,7 @@ const Seen = () => {
         {
             'title': '5. Download',
             'desc': "Download your favorite images. No watermark with subscription.",
-            'step': <IoCloudDownloadOutline  />,
+            'step': <IoCloudDownloadOutline />,
         },
     ]
     return (
@@ -96,8 +96,10 @@ const Seen = () => {
             <div className='lg:py-[] py-[5vh] overflow-hidden h-screen'
             // data-scroll data-scroll-speed='0.5'
             >
-                <h1 className='lg:text-[3vw] text-[6vw] font-[SanAntycs] uppercase font-extrabold text-center py-[2vh] tracking-wide'
-                >Before <span className='text-[#ffc300]'>And</span> After</h1>
+                <div className='flex lg:text-[3vw] text-[6vw] font-[SanAntycs]'>
+                    <h2 className='w-[50%] mx-auto text-center'>Before</h2>
+                    <h2 className='w-[50%] mx-auto text-center'>After</h2>
+                </div>
                 <MyCarousel
                 />
             </div>
