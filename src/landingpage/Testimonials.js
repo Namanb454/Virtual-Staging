@@ -37,44 +37,44 @@ const Testimonials = () => {
 
     const testi = [
         {
-            'img': 'testimonials/AJ.webp',
-            'name': 'AJ',
-            'desc': 'I take photos of 2 to 3 units per day and was thrilled when I found virtualstaging.art! They significantly cut down on how much money I spend on virtual staging!'
+            'img': 'testimonials/image_1.JPG',
+            'name': 'Aarav',
+            'desc': 'I recently stumbled upon Tipriyo, an AI website product that has completely revolutionized the way I approach interior design.'
         },
         {
-            'img': 'testimonials/alex.webp',
-            'name': 'Alex',
-            'desc': 'I take photos of 2 to 3 units per day and was thrilled when I found virtualstaging.art! They significantly cut down on how much money I spend on virtual staging!'
+            'img': 'testimonials/image_2.JPG',
+            'name': 'Vihaan',
+            'desc': "As a photographer, I have always been passionate about creating aesthetically pleasing spaces, but finding the perfect pieces to fit a particular room has always been a challenge. That's where Tipriyo comes in. "
         },
         {
-            'img': 'testimonials/audrey.webp',
-            'name': 'Audrey',
-            'desc': 'I take photos of 2 to 3 units per day and was thrilled when I found virtualstaging.art! They significantly cut down on how much money I spend on virtual staging!'
+            'img': 'testimonials/image_3.JPG',
+            'name': 'Aanya',
+            'desc': 'Thanks to Tipriyo, I have been able to create beautiful and functional spaces for my clients, and have received nothing but positive feedback.'
         },
         {
-            'img': 'testimonials/eustace.webp',
-            'name': 'eustace',
-            'desc': 'I take photos of 2 to 3 units per day and was thrilled when I found virtualstaging.art! They significantly cut down on how much money I spend on virtual staging!'
+            'img': 'testimonials/image_4.JPG',
+            'name': 'Arjun',
+            'desc': 'I highly recommend this AI website product to anyone in the interior design industry. It truly is a game-changer and has made my job so much easier. '
         },
         {
-            'img': 'testimonials/glenn.webp',
-            'name': 'Glenn',
-            'desc': 'I take photos of 2 to 3 units per day and was thrilled when I found virtualstaging.art! They significantly cut down on how much money I spend on virtual staging!'
+            'img': 'testimonials/image_5.JPG',
+            'name': 'Saanvi',
+            'desc': 'Thanks to Tipriyo, I have been able to create beautiful and functional spaces for my clients, and have received nothing but positive feedback.'
         },
         {
-            'img': 'testimonials/jared.webp',
-            'name': 'Jared',
-            'desc': 'I take photos of 2 to 3 units per day and was thrilled when I found virtualstaging.art! They significantly cut down on how much money I spend on virtual staging!'
+            'img': 'testimonials/image_6.JPG',
+            'name': 'Diya',
+            'desc': 'The website is user-friendly and easy to navigate, making it accessible to anyone, regardless of their level of expertise.'
         },
         {
-            'img': 'testimonials/kelsey.webp',
-            'name': 'Kelsey',
-            'desc': 'I take photos of 2 to 3 units per day and was thrilled when I found virtualstaging.art! They significantly cut down on how much money I spend on virtual staging!'
+            'img': 'testimonials/image_7.JPG',
+            'name': 'Kavya',
+            'desc': 'With its advanced AI technology, Tipriyo takes into account the specific dimensions and layout of a room, as well as the personal style and preferences of the customer.'
         },
         {
-            'img': 'testimonials/steve.webp',
-            'name': 'Steve',
-            'desc': 'I take photos of 2 to 3 units per day and was thrilled when I found virtualstaging.art! They significantly cut down on how much money I spend on virtual staging!'
+            'img': 'testimonials/image_8.JPG',
+            'name': 'Dhruv',
+            'desc': 'I capture images of 2 to 3 properties daily and was delighted when I discovered virtualstaging.art! It has substantially reduced my expenses on virtual staging.'
         },
     ]
 
