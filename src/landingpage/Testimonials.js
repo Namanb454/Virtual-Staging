@@ -107,7 +107,7 @@ const Testimonials = () => {
                                         />
                                     </div>
                                     <div className="text-center lg:px-[2vw] px-[4vw] space-y-[3vh]">
-                                        <p className="lg:text-[1.3vw] text-[5vw] font-bold font-[poppins] capitalize ">{testimonial.name}</p>
+                                        <p className="lg:text-[1.3vw] text-[5vw] font-bold font-[SanAntycs] capitalize ">{testimonial.name}</p>
                                         <p className="lg:text-[1.5vw] text-[4vw] text-[#081d27] text-justify font-semibold font-[SanAntycs]">{testimonial.desc}</p>
                                     </div>
                                 </div>

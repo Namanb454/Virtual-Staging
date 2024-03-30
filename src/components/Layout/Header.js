@@ -66,7 +66,7 @@ export default function Header() {
         },
         {
             'nav': 'Login',
-            'link': '/login',
+            'link': '/sign-in',
             'icon': <SlLogin />
         },
     ]

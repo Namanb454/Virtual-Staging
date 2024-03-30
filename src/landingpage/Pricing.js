@@ -109,7 +109,7 @@ const Pricing = () => {
                                             ${index === 2 && 'border-[#013147c9] lg:h-[75vh] h-[55vh]'}
                                             `}>
 
-                                            <h4 className={`lg:text-[1vw] text-[3vw] rounded-md text-left font-semibold bg-[#87c0d9] text-[#081d27] w-fit font-[poppins]
+                                            <h4 className={`lg:text-[1vw] text-[3vw] rounded-md text-left font-semibold bg-[#87c0d9] text-[#081d27] w-fit font-[SanAntycs]
                                             ${index === 2 && 'px-2 py-1 mx-auto my-2'}
                                             `}>{data.popular}
                                             </h4>
@@ -118,13 +118,13 @@ const Pricing = () => {
                                                 <h4 className="lg:text-[2vw] text-[5vw]">Pricing for Tipriyo</h4>
                                             </div>
 
-                                            <div className="lg:py-[2vh] font-[poppins] tracking-widest">
+                                            <div className="lg:py-[2vh] font-[SanAntycs] tracking-widest">
                                                 <span className="font-bold lg:text-[2vw] text-[6vw] text-[#081d27]">
                                                     <span className=''>{data.credit} - &#8377;{data.price}</span>
                                                 </span>
                                             </div>
 
-                                            <div className=" flex justify-center py-[3.5vh] font-[poppins]">
+                                            <div className=" flex justify-center py-[3.5vh] font-[SanAntycs]">
                                                 <ul className="space-y-[2vh] text-left lg:text-[1.2vw]">
                                                     <li className="">
                                                         1. All furniture styles

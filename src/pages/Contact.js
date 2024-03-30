@@ -1,8 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion';
+import { supabase } from '../lib/helper/Supabase'
 import { Link } from 'react-router-dom';
 
 const Contact = () => {
+
+    // create user
+    const [First_Name, setFirst_Name] = useState('');
+    const [Last_Name, setLast_Name] = useState('');
+    const [Phone_Number, setPhone_Number] = useState('');
+    const [Email_Id, setEmail_Id] = useState('');
+    const [Message, setMessage] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Insert data into the Supabase table
+        const { data, error } = await supabase
+            .from("User's_Contact_Information")
+            .insert([{ First_Name, Last_Name, Email_Id, Phone_Number, Message }]);
+
+        if (error) {
+            console.error('Error inserting data:', error.message);
+        } else {
+            console.log('Data inserted successfully:', data);
+            // Clear form fields after successful submission
+            setFirst_Name('');
+            setLast_Name('');
+            setEmail_Id('');
+            setPhone_Number('');
+            setMessage('');
+        }
+    };
+
     const item = {
         hidden: {
             opacity: 0,
@@ -43,31 +73,43 @@ const Contact = () => {
                             <h2 className="mb-8 text-xl font-semibold text-[#081d27] font-[SanAntycs]">
                                 Fill in the form
                             </h2>
-                            <form>
-                                <div className="grid gap-4 font-[poppins]">
+
+
+                            <form onSubmit={handleSubmit}>
+                                <div className="grid gap-4 font-[SanAntycs]">
                                     {/* Grid */}
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div>
                                             <label htmlFor="hs-firstname-contacts-1" className="sr-only">First Name</label>
-                                            <input type="text" name="hs-firstname-contacts-1" id="hs-firstname-contacts-1" className="py-3 px-4 block w-full border-[#081d27] rounded-lg text-sm border focus:border-white focus:ring-0" placeholder="First Name" />
+                                            <input type="text"
+                                                value={First_Name}
+                                                onChange={(e) => setFirst_Name(e.target.value)} id="hs-firstname-contacts-1" className="py-3 px-4 block w-full border-[#081d27] rounded-lg text-sm border focus:border-white focus:ring-0" placeholder="First Name" />
                                         </div>
                                         <div>
                                             <label htmlFor="hs-lastname-contacts-1" className="sr-only">Last Name</label>
-                                            <input type="text" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" className="py-3 px-4 block w-full border-[#081d27] rounded-lg text-sm border focus:border-white focus:ring-0" placeholder="Last Name" />
+                                            <input type="text"
+                                                value={Last_Name}
+                                                onChange={(e) => setLast_Name(e.target.value)} id="hs-lastname-contacts-1" className="py-3 px-4 block w-full border-[#081d27] rounded-lg text-sm border focus:border-white focus:ring-0" placeholder="Last Name" />
                                         </div>
                                     </div>
                                     {/* End Grid */}
                                     <div>
                                         <label htmlFor="hs-email-contacts-1" className="sr-only">Email</label>
-                                        <input type="email" name="hs-email-contacts-1" id="hs-email-contacts-1" autoComplete="email" className="py-3 px-4 block w-full border-[#081d27] rounded-lg text-sm border focus:border-white focus:ring-0" placeholder="Email" />
+                                        <input type="email"
+                                            value={Email_Id}
+                                            onChange={(e) => setEmail_Id(e.target.value)} id="hs-email-contacts-1" autoComplete="email" className="py-3 px-4 block w-full border-[#081d27] rounded-lg text-sm border focus:border-white focus:ring-0" placeholder="Email" />
                                     </div>
                                     <div>
                                         <label htmlFor="hs-phone-number-1" className="sr-only">Phone Number</label>
-                                        <input type="text" name="hs-phone-number-1" id="hs-phone-number-1" className="py-3 px-4 block w-full border-[#081d27] rounded-lg text-sm border focus:border-white focus:ring-0" placeholder="Phone Number" />
+                                        <input type="text"
+                                            value={Phone_Number}
+                                            onChange={(e) => setPhone_Number(e.target.value)} id="hs-phone-number-1" className="py-3 px-4 block w-full border-[#081d27] rounded-lg text-sm border focus:border-white focus:ring-0" placeholder="Phone Number" />
                                     </div>
                                     <div>
-                                        <label htmlFor="hs-about-contacts-1" className="sr-only">Details</label>
-                                        <textarea id="hs-about-contacts-1" name="hs-about-contacts-1" rows={4} className="py-3 px-4 block w-full border-[#081d27] rounded-lg text-sm border focus:border-white focus:ring-0" placeholder="Details" defaultValue={""} />
+                                        <label htmlFor="hs-about-contacts-1" className="sr-only">Message</label>
+                                        <textarea type="text"
+                                            value={Message}
+                                            onChange={(e) => setMessage(e.target.value)} id="hs-about-contacts-1" name="hs-about-contacts-1" rows={4} className="py-3 px-4 block w-full border-[#081d27] rounded-lg text-sm border focus:border-white focus:ring-0" placeholder="Message" defaultValue={""} />
                                     </div>
                                 </div>
                                 {/* End Grid */}
@@ -75,14 +117,14 @@ const Contact = () => {
                                     <button type="submit" className="py-3 px-4 w-full inline-flex justify-center items-center gap-x-2 lg:text-[1.4vw] text-[4vw] font-bold rounded-lg border border-[#87c0d9] text-[#87c0d9] bg-[#081d27] disabled:opacity-50 disabled:pointer-events-none  dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 transition-all duration-300 font-[SanAntycs]">Send inquiry</button>
                                 </div>
                                 <div className="mt-3 text-center">
-                                    <p className="text-sm text-gray-500 font-[poppins]">
+                                    <p className="text-sm text-gray-500 font-[SanAntycs]">
                                         We'll get back to you in 1-2 business days.
                                     </p>
                                 </div>
                             </form>
                         </div>
                         {/* End Card */}
-                        <div className="divide-y divide-gray-200 dark:divide-gray-800 font-[poppins]">
+                        <div className="divide-y divide-gray-200 dark:divide-gray-800 font-[SanAntycs]">
                             {/* Icon Block */}
                             <div className="flex gap-x-7 py-6">
                                 <svg className="flex-shrink-0 size-6 mt-1.5 text-gray-800 " xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><circle cx={12} cy={12} r={10} /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><path d="M12 17h.01" /></svg>
