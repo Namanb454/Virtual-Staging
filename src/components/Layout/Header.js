@@ -1,13 +1,38 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { supabase } from '../../lib/helper/Supabase';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { MdCall } from "react-icons/md";
+import { MdCall, MdEmail } from "react-icons/md";
 import { FaUserFriends } from "react-icons/fa";
 import { IoImageSharp } from "react-icons/io5";
-import { SlLogin } from "react-icons/sl";
+import { SlLogin, SlLogout } from "react-icons/sl";
+import { useUser } from '@supabase/auth-helpers-react';
+import Auth from '../../landingpage/Auth';
+
+// import { useHistory } from 'react-router-dom';
 
 export default function Header() {
+    // const navigate = useNavigate();
+    const [session, setSession] = useState(null)
+    useEffect(() => {
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            setSession(session)
+        })
+        const {
+            data: { subscription },
+        } = supabase.auth.onAuthStateChange((_event, session) => {
+            setSession(session)
+        })
+
+        return () => subscription.unsubscribe()
+    }, [])
+    const handleLogout = async () => {
+        await supabase.auth.signOut()
+        setSession(null)
+        window.location.reload();
+    }
+
     const { ref, inView } = useInView({ triggerOnce: true });
 
     const variants = {
@@ -94,22 +119,47 @@ export default function Header() {
                             <motion.div
                                 variants={item}
                                 className="children flex items-center w-[100%] mx-auto space-x-[3vw]">
-                                {navs.map((data, index) => {
-                                    return (
-                                        <Link to={data.link} variants={item}
-                                            className={`font-[SanAntycs] w-[9vw] text-white 
+                                <Link to='/contact' variants={item}
+                                    className={`font-[SanAntycs] w-[9vw] text-white 
                                         hover:bg-[#013147c9] hover:text-white px-[1vw] py-[2vh] rounded-full text-[1.3vw] font- flex items-center space-x-[1vw] shadow-neutral-500 shadow-
                                                  
                                         `}>
-                                            <span>
-                                                {data.nav}
-                                            </span>
-                                            <span className='text-[#ffc300] text-[3vh]'>
-                                                {data.icon}
-                                            </span>
-                                        </Link>
-                                    )
-                                })}
+                                    <span>
+                                        Email
+                                    </span>
+                                    <span className='text-[#ffc300] text-[3vh]'>
+                                        <MdEmail />
+                                    </span>
+                                </Link>
+                                {session ?
+
+                                    <button className='font-[SanAntycs] w-[9vw] text-white 
+                                    hover:bg-[#013147c9] hover:text-white px-[1vw] py-[2vh] rounded-full text-[1.3vw] font- flex items-center space-x-[1vw] shadow-neutral-500' onClick={handleLogout}>
+                                        <span>
+                                            Logout
+                                        </span>
+                                        <span className='text-[#ffc300] text-[3vh]'>
+                                            <SlLogout />
+                                        </span>
+                                    </button>
+
+                                    :
+
+                                    <Link to='/auth' variants={item}
+                                        className={`font-[SanAntycs] w-[9vw] text-white 
+                                        hover:bg-[#013147c9] hover:text-white px-[1vw] py-[2vh] rounded-full text-[1.3vw] font- flex items-center space-x-[1vw] shadow-neutral-500 shadow-
+                                                 
+                                        `}>
+                                        <span>
+                                            Login
+                                        </span>
+                                        <span className='text-[#ffc300] text-[3vh]'>
+                                            <SlLogin />
+                                        </span>
+                                    </Link>
+                                }
+                                {/* <Auth /> */}
+
                             </motion.div>
 
                         </div>

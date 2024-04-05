@@ -48,8 +48,8 @@ const Banner = () => {
                         {/* Title */}
                         <motion.div
                             variants={item}
-                            className="mt-[3vh] font-[SanAntycs]">
-                            <h1 className="block text-[#081d27] text-[8vw] md:text-[5vw] lg:text-[6vw] lg:w-[80%] mx-auto"
+                            className="mt-[3vh] font-[SanAntycs] font-bold">
+                            <h1 className="block bg-gradient-to-br from-[#081d27] from-[50%] to-[#87c0d9] bg-clip-text text-transparent text-[8vw] md:text-[5vw] lg:text-[6vw] lg:w-[80%] mx-auto"
                             >
                                 Transform your interior design process with AI
                             </h1>

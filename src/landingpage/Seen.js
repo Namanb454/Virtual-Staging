@@ -4,7 +4,7 @@ import { BiPointer } from "react-icons/bi";
 import { GoChecklist } from "react-icons/go";
 import { GrPowerCycle } from "react-icons/gr";
 import { IoCloudDownloadOutline } from "react-icons/io5";
-import MyCarousel from '../components/Layout/Carousel';
+import MyCarousel from './Carousel';
 const Seen = () => {
     const data = [
         {
@@ -68,7 +68,7 @@ const Seen = () => {
 
             <section class="text-gray-600 body-font lg:py-[15vh] py-[5vh]">
                 <section class="text-gray-600 body-font">
-                    <h1 className='lg:text-[3vw] text-[6vw] font-[SanAntycs] uppercase font-extrabold text-center py-[2vh] tracking-wide'
+                    <h1 className='lg:text-[3vw] text-[6vw] font-[SanAntycs] uppercase font-extrabold text-center py-[2vh] tracking-wide text-[#081d27]'
                     >How <span className='text-[#ffc300]'>To</span></h1>
                     <div class="container px-[2.5vw] lg:py-[10vh] py-[10] mx-auto">
                         <div class="flex flex-wrap text-center"

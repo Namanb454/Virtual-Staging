@@ -1,48 +1,51 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
         <div>
-            <footer className="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto font-[poppins]">
+            <footer className="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto font-[SanAntycs]">
                 {/* Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10">
                     <div className="col-span-full hidden lg:col-span-1 lg:block">
                         <a className="flex-none text-xl font-bold font-[SanAntycs] tracking-" href="/" aria-label="Brand">Tipriyo</a>
-                        <p className="mt-3 text-xs sm:text-sm text-gray-600">© 2024 Tipriyo.</p>
+                        <p className="mt-3 text-base sm:text-base text-gray-600">© 2024 Tipriyo.</p>
                     </div>
                     {/* End Col */}
                     <div>
-                        <h4 className="text-xs font-semibold text-gray-900 uppercase">Product</h4>
-                        <div className="mt-3 grid space-y-3 text-sm">
-                            <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800" href="/">Pricing</a></p>
+                        <h4 className="text-base font-semibold text-gray-900 uppercase">Customers</h4>
+                        <div className="mt-3 grid space-y-3 text-base">
+                            <p><a href='/interior-design' className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800">Interior Design</a></p>
+                            <p><a href='/photographers' className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800">Photographers</a></p>
+                            <p><a href='/agents-&-brokers' className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800">Agents & Brokers</a></p>
 
                         </div>
                     </div>
                     {/* End Col */}
                     <div>
-                        <h4 className="text-xs font-semibold text-gray-900 uppercase ">Company</h4>
-                        <div className="mt-3 grid space-y-3 text-sm">
-                            <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">About us</a></p>
+                        <h4 className="text-base font-semibold text-gray-900 uppercase ">Company</h4>
+                        <div className="mt-3 grid space-y-3 text-base">
+                            <p><a href="/about" className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " >About us</a></p>
 
                         </div>
                     </div>
                     {/* End Col */}
                     <div>
-                        <h4 className="text-xs font-semibold text-gray-900 uppercase ">Resources</h4>
-                        <div className="mt-3 grid space-y-3 text-sm">
+                        <h4 className="text-base font-semibold text-gray-900 uppercase ">Resources</h4>
+                        <div className="mt-3 grid space-y-3 text-base">
                             <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">Community</a></p>
                         </div>
                     </div>
                     {/* End Col */}
                     <div>
-                        <h4 className="text-xs font-semibold text-gray-900 uppercase ">Developers</h4>
-                        <div className="mt-3 grid space-y-3 text-sm">
+                        <h4 className="text-base font-semibold text-gray-900 uppercase ">Developers</h4>
+                        <div className="mt-3 grid space-y-3 text-base">
                             <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">Api</a></p>
                             <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">Status</a></p>
                             <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">GitHub</a> <span className="inline text-blue-600 dark:text-blue-500">— New</span></p>
                         </div>
-                        <h4 className="mt-7 text-xs font-semibold text-gray-900 uppercase ">Industries</h4>
-                        <div className="mt-3 grid space-y-3 text-sm">
+                        <h4 className="mt-7 text-base font-semibold text-gray-900 uppercase ">Industries</h4>
+                        <div className="mt-3 grid space-y-3 text-base">
                             <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">Financial Services</a></p>
                             <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">Education</a></p>
                         </div>
@@ -53,7 +56,7 @@ const Footer = () => {
                 <div className="pt-5 mt-5 border-t border-gray-200 dark:border-gray-700">
                     <div className="sm:flex sm:justify-between sm:items-center">
                         <div className="flex items-center gap-x-3">
-                            <div className="space-x-4 text-sm ms-4">
+                            <div className="space-x-4 text-base ms-4">
                                 <a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">Terms</a>
                                 <a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">Privacy</a>
                                 <a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">Status</a>
@@ -62,7 +65,7 @@ const Footer = () => {
                         <div className="flex justify-between items-center">
                             <div className="mt-3 sm:hidden">
                                 <a className="flex-none text-xl font-semibold dark:text-white" href="#" aria-label="Brand">Brand</a>
-                                <p className="mt-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400">© 2022 Preline.</p>
+                                <p className="mt-1 text-base sm:text-base text-gray-600 dark:text-gray-400">© 2022 Preline.</p>
                             </div>
                             {/* Social Brands */}
                             <div className="space-x-4">
