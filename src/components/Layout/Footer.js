@@ -6,8 +6,8 @@ const Footer = () => {
         <div>
             <footer className="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto font-[SanAntycs]">
                 {/* Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10">
-                    <div className="col-span-full hidden lg:col-span-1 lg:block">
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 mx-auto text-center gap-6 mb-10">
+                    <div className="col-span-full hidden lg:col-span-1 lg:block text-left">
                         <a className="flex-none text-xl font-bold font-[SanAntycs] tracking-" href="/" aria-label="Brand">Tipriyo</a>
                         <p className="mt-3 text-base sm:text-base text-gray-600">© 2024 Tipriyo.</p>
                     </div>
@@ -30,14 +30,14 @@ const Footer = () => {
                         </div>
                     </div>
                     {/* End Col */}
-                    <div>
+                    {/* <div>
                         <h4 className="text-base font-semibold text-gray-900 uppercase ">Resources</h4>
                         <div className="mt-3 grid space-y-3 text-base">
                             <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">Community</a></p>
                         </div>
-                    </div>
+                    </div> */}
                     {/* End Col */}
-                    <div>
+                    {/* <div>
                         <h4 className="text-base font-semibold text-gray-900 uppercase ">Developers</h4>
                         <div className="mt-3 grid space-y-3 text-base">
                             <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">Api</a></p>
@@ -49,7 +49,7 @@ const Footer = () => {
                             <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">Financial Services</a></p>
                             <p><a className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 " href="/">Education</a></p>
                         </div>
-                    </div>
+                    </div> */}
                     {/* End Col */}
                 </div>
                 {/* End Grid */}

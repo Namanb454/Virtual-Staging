@@ -74,7 +74,7 @@ const Testimonials = () => {
         {
             'img': 'testimonials/image_8.JPG',
             'name': 'Dhruv',
-            'desc': 'I capture images of 2 to 3 properties daily and was delighted when I discovered virtualstaging.art! It has substantially reduced my expenses on virtual staging.'
+            'desc': 'I capture images of 2 to 3 properties daily and was delighted when I discovered Tipriyo! It has substantially reduced my expenses on virtual staging.'
         },
     ]
 

@@ -36,17 +36,17 @@ export default function Login() {
                 backgroundImage: 'url("home/BedroomB.jpg")'
             }}
         >
-            <div className='backdrop-blur-sm lg:pt-[7vh] pt-[3vh]'>
+            <div className='backdrop-blur-md backdrop-brightness-50 lg:pt-[7vh] pt-[3vh]'>
                 <Header />
             </div>
-            <div className='backdrop-blur-md backdrop-brightness-100 lg:px-[30%] px-[10%] lg:py-[5%] py-[20%] h-screen'>
+            <div className='backdrop-blur-md backdrop-brightness-50 lg:px-[30%] px-[10%] lg:py-[5%] py-[20%] h-screen'>
                 <Auth supabaseClient={supabase} appearance={{
                     theme: ThemeSupa,
                     style: {
                         button: { backgroundColor: '#081d27', color: 'white', fontFamily: 'SanAntycs', fontSize: '', borderRadius: '100px', borderColor: 'white' },
-                        anchor: { color: '#013147c9', fontFamily: 'SanAntycs', fontWeight: '900' },
+                        anchor: { color: 'white', fontFamily: 'SanAntycs', fontWeight: '900' },
                         label: { color: '#013147c9', fontFamily: 'SanAntycs', fontWeight: '900' },
-                        input: { color: '#013147c9', fontFamily: 'SanAntycs' },
+                        input: { color: 'white', fontFamily: 'SanAntycs' },
                     },
                     variables: {
                         sign_in: {

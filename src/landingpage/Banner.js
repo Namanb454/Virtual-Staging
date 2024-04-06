@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaPlay } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     const { ref, inView } = useInView({ triggerOnce: true });
@@ -67,9 +68,9 @@ const Banner = () => {
                             className=" flex justify-center font-[SanAntycs] space-x-[2vw] lg:text-[1.4vw] md:text-[2vw] text-[4vw] tracking-wide"
                         >
 
-                            <a className="lg:py-[2vh] py-[2vh] lg:px-[1.5vw] px-[3vw] inline-flex items-center rounded-full border border-transparent bg-[#081d27] text-[#ffffef] hover:shadow-[#081d27] shadow-md disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">
+                            <Link to='/generate-image' className="lg:py-[2vh] py-[2vh] lg:px-[1.5vw] px-[3vw] inline-flex items-center rounded-full border border-transparent bg-[#081d27] text-[#ffffef] hover:shadow-[#081d27] shadow-md disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                 Get Started
-                            </a>
+                            </Link>
                             <a className="lg:py-[2vh] py-[2vh] lg:px-[1.5vw] px-[3vw] inline-flex items-center rounded-full border border-transparent bg-[#081d27] text-[#ffffef] hover:shadow-[#081d27] shadow-md disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#video">
                                 <span className='text-[#ffc300] lg:text-[0.8vw]'>
                                     <FaPlay />

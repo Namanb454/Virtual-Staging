@@ -93,7 +93,7 @@ const Seen = () => {
                 </section>
             </section>
 
-            <div className='lg:py-[] py-[5vh] overflow-hidden h-screen text-[#081d27]'
+            <div className='lg:py-[15vh] py-[5vh] overflow-hidden text-white bg-gradient-to-br from-[#081d27] from-[50%] to-[#87c0d9]'
             // data-scroll data-scroll-speed='0.5'
             >
                 <div className='flex lg:text-[3vw] text-[6vw] font-[SanAntycs]'>

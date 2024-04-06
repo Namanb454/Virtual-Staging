@@ -65,7 +65,7 @@ const MyCarousel = () => {
                         transition={{ duration: 1.2 }}
                         className="w-[100vw] object-cover ">
 
-                        <div className="object-cover bg-[#fcfcea] rounded-2xl shadow-lg shadow-[#081d27] mx-auto lg:w-[40vw] w-[100%] lg:h-[100%] h-[100%] bg-contain">
+                        <div className="object-cover bg-[#fcfcea] rounded-2xl shadow-xl shadow-white mx-auto lg:w-[40vw] w-[100%] lg:h-[100%] h-[100%] bg-contain">
                             <div className="items-center object-cover ">
                                 <div className="flex-shrink-0 lg:w-[100%] object-cover lg:h-[100%] w-[100%] mx-auto">
                                     <img
