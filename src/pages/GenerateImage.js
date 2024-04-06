@@ -100,30 +100,30 @@ const GenerateImage = () => {
             <div className='lg:pt-[7vh] pt-[3vh]'>
                 <Header />
             </div>
-            <h2 className='mx-auto lg:text-[3vw] text-[6vw] font-bold title-font mb-5 text-[#081d27] font-[SanAntycs] flex lg:pt-[15vh] py-[vh] w-fit'>Generate Image</h2>
+            <h2 className='mx-auto lg:text-[3vw] text-[6vw] font-bold title-font mb-5 text-[#081d27] font-[SanAntycs] flex lg:pt-[15vh] pt-[5vh] w-fit'>Generate Image</h2>
 
             <div className='lg:w-[80%] w-[90%] mx-auto lg:text-[3vw] text-[6vw] font-bold title-font mb-5 text-[#081d27] font-[SanAntycs] '>
                 {/* <h1 className='w-[100%] text-[2vw]'>
                     Your Photo
                 </h1> */}
 
-                <div className='flex border-2 shadow-2xl shadow-[#081d27] py-[10vh] p-10 rounded-lg space-x-[2vw]'>
+                <div className='lg:flex border-2 shadow-2xl shadow-[#081d27] py-[10vh] p-10 rounded-lg lg:space-x-[2vw] lg:space-y-0 space-y-[5vw]'>
 
 
 
-                    <div className=' w-[50%] text-[1.2vw]'>
+                    <div className='lg:w-[50%] text-[1.2vw]'>
                         <form onSubmit={handleSubmit} className='space-y-[2vh]'>
                             <div className=''>
                                 {imageUrl && (
                                     <div>
                                         {/* <h2>Preview:</h2> */}
-                                        <img src={imageUrl} alt="Selected" width="200" />
+                                        <img className='lg:w-[20vw] w-[100vw] mb-5 mx-auto' src={imageUrl} alt="Selected" />
                                     </div>
                                 )}
                                 <div className='flex'>
-                                    <label className='w-[50%]' htmlFor="imageUrl">Choose image:</label>
+                                    <label className='w-[50%] lg:text-base text-[3vw]' htmlFor="imageUrl">Choose image:</label>
                                     <input
-                                        className='w-[50%]'
+                                        className='w-[50%] lg:text-base text-[3vw]'
                                         type="file"
                                         accept="image/*"
                                         onChange={handleImageChange}
@@ -132,12 +132,12 @@ const GenerateImage = () => {
                             </div>
 
                             <div className='flex '>
-                                <label className='w-[50%]' htmlFor="roomType">Room type:</label>
+                                <label className='w-[50%] lg:text-base text-[3vw]' htmlFor="roomType">Room type:</label>
                                 <div className="relative">
                                     <input
                                         type="text"
                                         value={roomType}
-                                        className="cursor-pointer bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
+                                        className="lg:text-base text-[3vw] cursor-pointer bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
                                         readOnly
                                         onClick={toggleDropdown1}
                                         onChange={(e) => setRoomType(e.target.value)}
@@ -146,37 +146,37 @@ const GenerateImage = () => {
                                         <div className=" top-full left-0 bg-white border border-gray-300 rounded-md shadow-lg mt-2">
                                             <ul className="py-1">
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect1('bed')}
                                                 >
                                                     bed
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect1('living')}
                                                 >
                                                     living
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect1('kitchen')}
                                                 >
                                                     kitchen
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect1('dining')}
                                                 >
                                                     dining
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect1('bathroom')}
                                                 >
                                                     bathroom
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect1('home_office')}
                                                 >
                                                     home_office
@@ -189,12 +189,12 @@ const GenerateImage = () => {
 
 
                             <div className='flex '>
-                                <label className='w-[50%]' htmlFor="style">Furniture style:</label>
+                                <label className='w-[50%] lg:text-base text-[3vw]' htmlFor="style">Furniture style:</label>
                                 <div className="relative">
                                     <input
                                         type="text"
                                         value={style}
-                                        className="cursor-pointer bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
+                                        className="lg:text-base text-[3vw] cursor-pointer bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
                                         readOnly
                                         onClick={toggleDropdown2}
                                         onChange={(e) => setStyle(e.target.value)}
@@ -203,49 +203,49 @@ const GenerateImage = () => {
                                         <div className=" top-full left-0 bg-white border border-gray-300 rounded-md shadow-lg mt-2">
                                             <ul className="py-1">
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect2('modern')}
                                                 >
                                                     modern
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect2('scandinavian')}
                                                 >
                                                     scandinavian
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect2('industrial')}
                                                 >
                                                     industrial
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect2('midcentury')}
                                                 >
                                                     midcentury
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect2('luxury')}
                                                 >
                                                     luxury
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect2('farmhouse')}
                                                 >
                                                     farmhouse
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect2('coastal')}
                                                 >
                                                     coastal
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect2('standard')}
                                                 >
                                                     standard
@@ -258,12 +258,12 @@ const GenerateImage = () => {
 
 
                             <div className='flex '>
-                                <label className='w-[50%]' htmlFor="declutterMode">Remove existing furniture:</label>
+                                <label className='w-[50%] lg:text-base text-[3vw]' htmlFor="declutterMode">Remove existing furniture:</label>
                                 <div className="relative">
                                     <input
                                         type="text"
                                         value={declutterMode}
-                                        className="cursor-pointer bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
+                                        className="lg:text-base text-[3vw] cursor-pointer bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none"
                                         readOnly
                                         onClick={toggleDropdown3}
                                         onChange={(e) => setDeclutterMode(e.target.value)}
@@ -272,19 +272,19 @@ const GenerateImage = () => {
                                         <div className="absolute top-full left-0 bg-white border border-gray-300 rounded-md shadow-lg mt-2">
                                             <ul className="py-1">
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect3('off')}
                                                 >
                                                     off
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect3('auto')}
                                                 >
                                                     auto
                                                 </li>
                                                 <li
-                                                    className="hover:bg-gray-100 px-4 py-2 cursor-pointer"
+                                                    className="lg:text-base text-[3vw] hover:bg-gray-100 px-4 py-2 cursor-pointer"
                                                     onClick={() => handleOptionSelect3('on')}
                                                 >
                                                     on
@@ -295,12 +295,12 @@ const GenerateImage = () => {
                                 </div>
                             </div>
                             {/* Add similar input fields for other parameters */}
-                            <button className='w-[100%] rounded-md bg-[#ffc300] p-1' type="submit">Create Render</button>
+                            <button className='lg:text-base text-[3vw] w-[100%] rounded-md bg-[#ffc300] p-1' type="submit">Create Render</button>
                         </form>
                     </div>
 
                     {/* New Image  */}
-                    <div className='w-[50%]'>
+                    <div className='lg:w-[50%] w-[100%]'>
                         {/* {newImageUrl && (
                             <div>
                                 <h3>New Image URL:</h3>

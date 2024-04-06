@@ -121,7 +121,7 @@ export default function Header() {
                                 className="children flex items-center w-[100%] mx-auto space-x-[3vw]">
                                 <Link to='/contact' variants={item}
                                     className={`font-[SanAntycs] w-[9vw] text-white 
-                                        hover:bg-[#013147c9] hover:text-white px-[1vw] py-[2vh] rounded-full text-[1.3vw] font- flex items-center space-x-[1vw] shadow-neutral-500 shadow-
+                                        hover:bg-[#013147c9] hover:text-white px-[1vw] py-[2vh] rounded-full lg:text-[1.3vw] font- flex items-center space-x-[1vw] shadow-neutral-500 shadow-
                                                  
                                         `}>
                                     <span>
@@ -158,7 +158,6 @@ export default function Header() {
                                         </span>
                                     </Link>
                                 }
-                                {/* <Auth /> */}
 
                             </motion.div>
 
@@ -220,21 +219,47 @@ export default function Header() {
                     variants={variantss}
                     initial='hidden'
                     animate='show'
-                    className="mt-[3vh] pt-2 pb-3 sm:px- w-[90%] mx-auto rounded-3xl text-left md:space-y-[1vw] space-y-[5vw] shadow-sm shadow-gray-500 ">
-                    {navs.map((data, index) => {
-                        return (
-                            <Link to={data.link}
-                                variants={items}
-                                href="#how-it-works" className={`w-[30vw] text-neutral-950 hover:bg-neutral-800 hover:text-white px-[3vw] py-[2vh] rounded-full md:text-[2vh] text-[1.5vh] flex items-center space-x-[1vw] font-[poppins]`}>
-                                <span>
-                                    {data.nav}
-                                </span>
-                                <span>
-                                    {data.icon}
-                                </span>
-                            </Link>
-                        )
-                    })}
+                    className="mt-[3vh] pt-2 pb-3 sm:px- w-[90%] mx-auto rounded-3xl text-left md:space-y-[1vw] shadow-sm shadow-gray-500 ">
+                    {/* {navs.map((data, index) => { */}
+                    {/* return ( */}
+                    <Link to='/contact' variants={item}
+                        className={`font-[SanAntycs] w-fit mx-[5vw] text-[#013147c9] hover:bg-[#013147c9] hover:text-white px-[5vw] py-[2vh] rounded-full text-[4vw] font- flex items-center space-x-[1vw] shadow-neutral-500
+                                                 
+                                        `}>
+                        <span>
+                            Email
+                        </span>
+                        <span className='text-[#ffc300] text-[3vh]'>
+                            <MdEmail />
+                        </span>
+                    </Link>
+                    {session ?
+
+                        <button className='font-[SanAntycs] w-fit mx-[5vw] text-[#013147c9] hover:bg-[#013147c9] hover:text-white px-[5vw] py-[2vh] rounded-full text-[4vw] font- flex items-center space-x-[1vw] shadow-neutral-500' onClick={handleLogout}>
+                            <span>
+                                Logout
+                            </span>
+                            <span className='text-[#ffc300] text-[3vh]'>
+                                <SlLogout />
+                            </span>
+                        </button>
+
+                        :
+
+                        <Link to='/auth' variants={item}
+                            className={`font-[SanAntycs] w-fit mx-[5vw] text-[#013147c9] hover:bg-[#013147c9] hover:text-white px-[5vw] py-[2vh] rounded-full text-[4vw] font- flex items-center space-x-[1vw] shadow-neutral-500
+             
+    `}>
+                            <span>
+                                Login
+                            </span>
+                            <span className='text-[#ffc300] text-[3vh]'>
+                                <SlLogin />
+                            </span>
+                        </Link>
+                    }
+                    {/* ) */}
+                    {/* })} */}
                 </motion.div>
             </div>
         </motion.nav>

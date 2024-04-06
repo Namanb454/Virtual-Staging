@@ -44,8 +44,8 @@ export default function Login() {
                     theme: ThemeSupa,
                     style: {
                         button: { backgroundColor: '#081d27', color: 'white', fontFamily: 'SanAntycs', fontSize: '', borderRadius: '100px', borderColor: 'white' },
-                        anchor: { color: 'white', fontFamily: 'SanAntycs', fontWeight: '900' },
-                        label: { color: '#013147c9', fontFamily: 'SanAntycs', fontWeight: '900' },
+                        anchor: { color: 'white', fontFamily: 'SanAntycs', fontWeight: '500' },
+                        label: { color: 'white', fontFamily: 'SanAntycs', fontWeight: '500' },
                         input: { color: 'white', fontFamily: 'SanAntycs' },
                     },
                     variables: {
