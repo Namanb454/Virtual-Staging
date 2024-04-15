@@ -43,7 +43,7 @@ const Pricing = () => {
             // 'title': 'Virtual Staging',
             'method': 'Humans using photoshop',
             'time': 'Days',
-            'price': '599',
+            'price': '699',
             'credit': '5 credits',
             'popular': ''
         },
@@ -51,7 +51,7 @@ const Pricing = () => {
             // 'title': 'Physical Staging',
             'method': 'Physically staging a home with furniture',
             'time': 'Weeks',
-            'price': '1,099',
+            'price': '1,299',
             'credit': '10 credits',
             'popular': 'Most Popular'
         },
@@ -59,7 +59,7 @@ const Pricing = () => {
             // 'title': 'Physical Staging',
             'method': 'Physically staging a home with furniture',
             'time': 'Weeks',
-            'price': '3,000',
+            'price': '2,899',
             'credit': '25 credits',
             'popular': ''
         },
