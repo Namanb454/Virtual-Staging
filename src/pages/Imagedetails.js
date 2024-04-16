@@ -35,9 +35,17 @@ const ImageDetailsPage = () => {
     }, []);
 
     return (
-        <div>
-            <Header />
-            <div className="container mx-auto px-4 py-8">
+        <div title={"Tipriyo-Home "} className='font-[SanAntycs]'>
+            <div className='bg-cover '
+                style={{
+                    // backgroundImage: 'url("home/LivingRoomB.jpg")'
+                }}>
+
+
+                <div className='backdrop-blur-sm lg:pt-[7vh] pt-[3vh]'>
+                    <Header />
+                </div>
+             <div className="container mx-auto px-4 py-8">
                 <h2 className="text-3xl font-semibold mb-4">Image Details</h2>
                 <div className="flex flex-wrap items-start justify-center">
                     {/* Display image details here */}
@@ -65,7 +73,9 @@ const ImageDetailsPage = () => {
                     </div>
                 </div>
             </div>
+            </div>
             <Footer />
+        
         </div>
     );
 };

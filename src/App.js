@@ -15,6 +15,7 @@ import Auth from './landingpage/Auth';
 import GenerateImage from './pages/GenerateImage';
 import GalleryPage from './pages/Gallery';
 import ImageDetailsPage from './pages/Imagedetails';
+import UserProfilePage from './pages/Userprofile';
 function App() {
   const locomotiveScroll = new LocomotiveScroll();
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path='/generate-image' element={<GenerateImage />} />
           <Route path='/gallery' element={<GalleryPage />} />
           <Route path='/imagedetails' element={<ImageDetailsPage />} />
+          <Route path='/user' element={<UserProfilePage />} />
         </Routes>
       </BrowserRouter>
     </>
