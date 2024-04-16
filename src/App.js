@@ -13,6 +13,8 @@ import Agents_Brokers from './pages/Agents_Brokers';
 import VirtualStaging from './pages/GenerateImage';
 import Auth from './landingpage/Auth';
 import GenerateImage from './pages/GenerateImage';
+import GalleryPage from './pages/Gallery';
+import ImageDetailsPage from './pages/Imagedetails';
 function App() {
   const locomotiveScroll = new LocomotiveScroll();
   return (
@@ -30,7 +32,8 @@ function App() {
           <Route path='/interior-design' element={<InteriorDesign />} />
           <Route path='/agents-&-brokers' element={<Agents_Brokers />} />
           <Route path='/generate-image' element={<GenerateImage />} />
-
+          <Route path='/gallery' element={<GalleryPage />} />
+          <Route path='/imagedetails' element={<ImageDetailsPage />} />
         </Routes>
       </BrowserRouter>
     </>
