@@ -1,6 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import Header from '../components/Layout/Header'
+import { useNavigate } from 'react-router-dom';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(process.env.REACT_APP_SUPABASE_URL, process.env.REACT_APP_SUPABASE_ANON_KEY);
 
 const GenerateImage = () => {
     // dropdown 
@@ -59,16 +63,92 @@ const GenerateImage = () => {
     const [newImageUrl, setNewImageUrl] = useState('');
     const [error, setError] = useState('');
 
+    const [loading, setLoading] = useState(true);
+
+    const navigate = useNavigate();
+
+    // State to manage user data and credits
+    const [userData, setUserData] = useState(null);
+    const [credits, setCredits] = useState(0);
+    const [showDropdown, setShowDropdown] = useState(false);
+    const [session, setSession] = useState(null);
+
+    const handleLogout = async () => {
+        await supabase.auth.signOut()
+        setSession(null)
+        window.location.reload();
+    }
+
+    // Function to fetch user data and credits
+    const fetchUserData = async () => {
+        if (!loading) return
+
+        try {
+            const user = (await supabase.auth.getSession()).data.session?.user;
+
+            if (!user) {
+                // If no user data, navigate to login page
+                navigate('/auth');
+                return;
+            }
+            // Fetch user data from Supabase
+            const { data, error } = await supabase.from('users').select().eq('user_id', user.id).limit(1);
+            if (error) throw error;
+
+            if (data.length == 0) {
+                // signup user
+                const { error } = await supabase.from('users').insert({
+                    user_id: user.id,
+                    email: user.email,
+                    credits: 0
+                })
+                console.log(error)
+                window.location.reload();
+            } else {
+                setLoading(false)
+            }
+
+            setUserData(data[0]);
+            setCredits(data[0].credits);
+        } catch (error) {
+            console.error('Error fetching user data:', error);
+            // Handle error
+            handleLogout();
+        }
+    };
+
+    useEffect(() => {
+        if (!loading) return
+
+        // Subscribe to changes in authentication state
+        const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
+            setSession(session);
+            console.log(event)
+            if (event === 'SIGNED_OUT') {
+                navigate('/auth');
+            } else if (event == 'SIGNED_IN') {
+                fetchUserData();
+            }
+        });
+
+        return () => {
+            // Check if listener is defined before unsubscribing
+            if (listener && typeof listener.unsubscribe === 'function') {
+                listener.unsubscribe();
+            }
+        };
+    }, [loading]);
 
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                setImageUrl(e.target.result);
-            };
-            reader.readAsDataURL(file);
+            setImageUrl(file)
+            // const reader = new FileReader();
+            // reader.onload = (e) => {
+            //     setImageUrl(e.target.result);
+            // };
+            // reader.readAsDataURL(file);
         }
     };
 
@@ -76,20 +156,49 @@ const GenerateImage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            const response = await axios.post('http://localhost:3000/createRender', {
-                image_url: imageUrl,
-                room_type: roomType,
-                style: style,
-                resolution: resolution,
-                wait_for_completion: waitForCompletion,
-                add_virtually_staged_watermark: addWatermark,
-                mode: mode,
-                declutter_mode: declutterMode,
-            });
+        const formData = new FormData();
+        formData.append("image", imageUrl)
+        formData.append("room_type", roomType)
+        formData.append("style", style)
+        formData.append("resolution", resolution)
+        formData.append("wait_for_completion", true)
+        formData.append("add_virtually_staged_watermark", addWatermark)
+        formData.append("mode", mode)
+        formData.append("declutter_mode", declutterMode)
 
-            const { newImageUrl } = response.data;
+        try {
+            const response = await axios.post('http://localhost:8000/createRender', formData);
+            console.log(response.data);
+
+            const { _imageUrl, renderId, newImageUrl } = response.data;
+
+            console.log(_imageUrl, renderId, newImageUrl)
+
+            setImageUrl(_imageUrl);
             setNewImageUrl(newImageUrl);
+
+            const { render_error } = await supabase
+                .from('renders')
+                .insert({
+                    user_id: userData.id,
+                    render_id: renderId,
+                    image_url: _imageUrl
+                })
+
+            const { consume_error } = await supabase
+                .from('users')
+                .update({ credits: userData.credits - 1 })
+                .eq('id', userData.id)
+
+            if (!render_error && !consume_error) {
+                alert("Image has been uploaded. Your render will be ready soon.")
+                navigate("/gallery")
+            } else {
+                console.log("errorrrrrr")
+                console.log(render_error)
+                console.log(consume_error)
+            }
+
         } catch (error) {
             setError('Failed to process image');
         }

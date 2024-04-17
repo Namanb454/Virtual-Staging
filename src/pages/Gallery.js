@@ -3,8 +3,80 @@ import axios from 'axios';
 import Header from '../components/Layout/Header';
 import Footer from '../components/Layout/Footer';
 import { motion } from 'framer-motion';
+import { createClient } from '@supabase/supabase-js';
+import { useNavigate } from 'react-router-dom';
+
+const supabase = createClient(process.env.REACT_APP_SUPABASE_URL, process.env.REACT_APP_SUPABASE_ANON_KEY);
 
 const GalleryPage = () => {
+
+    const [userLoading, setUserLoading] = useState(true);
+
+    const navigate = useNavigate();
+
+    // State to manage user data and credits
+    const [userData, setUserData] = useState(null);
+    const [credits, setCredits] = useState(0);
+    const [showDropdown, setShowDropdown] = useState(false);
+    const [session, setSession] = useState(null);
+
+    const handleLogout = async () => {
+        await supabase.auth.signOut()
+        setSession(null)
+        window.location.reload();
+    }
+
+    // Function to fetch user data and credits
+    const fetchUserData = async () => {
+        console.log("fetch user data", userLoading)
+        if (!userLoading) return
+
+        try {
+            const user = (await supabase.auth.getSession()).data.session?.user;
+
+            if (!user) {
+                // If no user data, navigate to login page
+                navigate('/auth');
+                return;
+            }
+            // Fetch user data from Supabase
+            const { data, error } = await supabase.from('users').select().eq('user_id', user.id).limit(1);
+            if (error) throw error;
+
+            if (data.length == 0) {
+                navigate("/")
+            } else {
+                setUserData(data[0]);
+                setUserLoading(false)
+            }
+
+            setCredits(data[0].credits);
+        } catch (error) {
+            console.error('Error fetching user data:', error);
+            // Handle error
+            handleLogout();
+        }
+    };
+
+    useEffect(() => {
+        // Subscribe to changes in authentication state
+        const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
+            setSession(session);
+            if (event === 'SIGNED_OUT') {
+                navigate('/auth');
+            } else if (event == 'SIGNED_IN') {
+                fetchUserData();
+            }
+        });
+
+        return () => {
+            // Check if listener is defined before unsubscribing
+            if (listener && typeof listener.unsubscribe === 'function') {
+                listener.unsubscribe();
+            }
+        };
+    }, []);
+
     const variants = {
         hidden: { opacity: 0 },
         show: {
@@ -55,7 +127,12 @@ const GalleryPage = () => {
     };
 
     const fetchImageList = async () => {
+        if (!userData) return
+
         try {
+            const { images, error } = await supabase.from('renders').select().eq('user_id', userData.id);
+            console.log("images", images)
+
             const response = await axios.get(`https://jsonplaceholder.typicode.com/photos?_page=${page}&_limit=10`);
             setImageList(prevImageList => [...prevImageList, ...response.data.map(photo => photo.url)]);
             if (response.data.length === 0) {

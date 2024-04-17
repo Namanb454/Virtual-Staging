@@ -20,7 +20,7 @@ const UserProfilePage = () => {
     // Function to fetch user data and credits
     const fetchUserData = async () => {
         try {
-            const user = supabase.auth.user();
+            const user = (await supabase.auth.getSession()).data.session;
             if (!user) {
                 // If no user data, navigate to login page
                 navigate('/auth');
@@ -68,7 +68,7 @@ const UserProfilePage = () => {
     if (!userData) {
         return <div>Loading...</div>;
     }
-    
+
 
     // pricing data
     const pricingData = [
@@ -101,7 +101,7 @@ const UserProfilePage = () => {
             popular: ''
         },
     ];
-    
+
     const handlePurchaseCredits = () => {
         setShowDropdown(!showDropdown);
     };
@@ -117,59 +117,59 @@ const UserProfilePage = () => {
                 <div className='backdrop-blur-sm lg:pt-[7vh] pt-[3vh]'>
                     <Header />
                 </div>
-            <div className="container mx-auto px-4 py-8 flex flex-col items-center justify-center">
-                <h2 className="text-3xl font-semibold mb-4">User Profile</h2>
-                <div className="bg-white shadow-md rounded-lg p-8 w-full md:w-2/3 lg:w-1/2">
-                    {/* Display user details */}
-                    <p className="text-lg mb-4"><strong>Name:</strong> {userData.name}</p>
-                    <p className="text-lg mb-4"><strong>Email:</strong> {userData.email}</p>
-                    <p className="text-lg mb-4"><strong>Credits Left:</strong> {credits}</p>
-                    {/* Button to toggle dropdown */}
-                    <button onClick={handlePurchaseCredits} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
-                        Purchase More Credits
-                    </button>
-                    {/* Dropdown menu for purchasing more credits */}
-                    {showDropdown && (
-                        <div className="bg-white shadow-md rounded-lg p-4 mt-4 w-full">
-                            {pricingData.map((data, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.3 * index }}
-                                    className="border-b border-gray-200 py-2"
-                                >
-                                    <div className="py-[2vh] font-[SanAntycs] tracking-wide font-bold">
-                                                <h4 className="lg:text-[2vw] text-[5vw]">Pricing for Tipriyo</h4>
-                                            </div>
-                                    <div className="lg:py-[2vh] font-[SanAntycs] tracking-widest">
-                                                <span className="font-bold lg:text-[2vw] text-[6vw] text-[#081d27]">
-                                                    <span className=''>{data.credit} - &#8377;{data.price}</span>
-                                                </span>
-                                            </div>
-                                    <div className=" flex justify-center py-[3.5vh] font-[SanAntycs]">
-                                                <ul className="space-y-[2vh] text-left lg:text-[1.2vw]">
-                                                    <li className="">
-                                                        1. All furniture styles
-                                                    </li>
-                                                    <li className="">
-                                                        2. All room types
-                                                    </li>
-                                                    <li>
-                                                        3. Unlimited regenerations
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Buy</button>
-                                </motion.div>
-                            ))}
-                        </div>
-                    )}
+                <div className="container mx-auto px-4 py-8 flex flex-col items-center justify-center">
+                    <h2 className="text-3xl font-semibold mb-4">User Profile</h2>
+                    <div className="bg-white shadow-md rounded-lg p-8 w-full md:w-2/3 lg:w-1/2">
+                        {/* Display user details */}
+                        <p className="text-lg mb-4"><strong>Name:</strong> {userData.name}</p>
+                        <p className="text-lg mb-4"><strong>Email:</strong> {userData.email}</p>
+                        <p className="text-lg mb-4"><strong>Credits Left:</strong> {credits}</p>
+                        {/* Button to toggle dropdown */}
+                        <button onClick={handlePurchaseCredits} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
+                            Purchase More Credits
+                        </button>
+                        {/* Dropdown menu for purchasing more credits */}
+                        {showDropdown && (
+                            <div className="bg-white shadow-md rounded-lg p-4 mt-4 w-full">
+                                {pricingData.map((data, index) => (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.3 * index }}
+                                        className="border-b border-gray-200 py-2"
+                                    >
+                                        <div className="py-[2vh] font-[SanAntycs] tracking-wide font-bold">
+                                            <h4 className="lg:text-[2vw] text-[5vw]">Pricing for Tipriyo</h4>
+                                        </div>
+                                        <div className="lg:py-[2vh] font-[SanAntycs] tracking-widest">
+                                            <span className="font-bold lg:text-[2vw] text-[6vw] text-[#081d27]">
+                                                <span className=''>{data.credit} - &#8377;{data.price}</span>
+                                            </span>
+                                        </div>
+                                        <div className=" flex justify-center py-[3.5vh] font-[SanAntycs]">
+                                            <ul className="space-y-[2vh] text-left lg:text-[1.2vw]">
+                                                <li className="">
+                                                    1. All furniture styles
+                                                </li>
+                                                <li className="">
+                                                    2. All room types
+                                                </li>
+                                                <li>
+                                                    3. Unlimited regenerations
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Buy</button>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
-            </div>
             <Footer />
-        
+
         </div>
     );
 };
