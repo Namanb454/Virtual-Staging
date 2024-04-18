@@ -5,6 +5,7 @@ import Footer from '../components/Layout/Footer';
 import { motion } from 'framer-motion';
 import { createClient } from '@supabase/supabase-js';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const supabase = createClient(process.env.REACT_APP_SUPABASE_URL, process.env.REACT_APP_SUPABASE_ANON_KEY);
 
@@ -13,10 +14,12 @@ const GalleryPage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [imageList, setImageList] = useState([]);
+    const [image, setImage] =  useState([]);
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
     const navigate = useNavigate();
     const observer = useRef();
+
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -56,9 +59,11 @@ const GalleryPage = () => {
             try {
                 const { data: images, error } = await supabase
                     .from('renders')
-                    .select('image_url')
+                    .select()
                     .eq('user_id', userData.id)
                     .range((page - 1) * 10, page * 10 - 1);
+                    setImage(images)
+                    
                 if (error) {
                     throw new Error(error.message);
                 }
@@ -107,7 +112,7 @@ const GalleryPage = () => {
             },
         },
     };
-
+    
     return (
         <div title={"Tipriyo-Home "} className='font-[SanAntycs]'>
             <div className='backdrop-blur-sm lg:pt-[7vh] pt-[3vh]'>
@@ -118,11 +123,12 @@ const GalleryPage = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center" style={{ padding: '0 20px' }}>
                 {imageList.map((imageUrl, index) => (
+                    <Link to={`/image/${image[index].id}`} key={index}>
                     <motion.img key={index} src={imageUrl} alt={`Image ${index}`} className="max-w-xs rounded-lg shadow-lg"
                         initial="hidden"
                         animate="show"
                         variants={item}
-                    />
+                    /></Link>
                 ))}
                 {!loading && hasMore && (
                     <div className="observer" style={{ height: '20px' }}></div>

@@ -34,8 +34,10 @@ function App() {
           <Route path='/agents-&-brokers' element={<Agents_Brokers />} />
           <Route path='/generate-image' element={<GenerateImage />} />
           <Route path='/gallery' element={<GalleryPage />} />
-          <Route path='/imagedetails' element={<ImageDetailsPage />} />
+          <Route path='/image' element={<ImageDetailsPage />} />
           <Route path='/user' element={<UserProfilePage />} />
+          <Route path="/image/:imageId" element={<ImageDetailsPage />} />
+          <Route path="/generate-image/:imageId" element={<GenerateImage />} />
         </Routes>
       </BrowserRouter>
     </>

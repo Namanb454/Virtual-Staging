@@ -1,81 +1,87 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import Header from '../components/Layout/Header';
 import Footer from '../components/Layout/Footer';
-import { useParams } from 'react-router-dom'; // Assuming you're using React Router
-import { useEffect } from 'react';
-const ImageDetailsPage = () => {
-    // Assuming you have a route parameter for the image ID
-    const { imageId } = useParams();
+import { createClient } from '@supabase/supabase-js';
 
-    // State to manage variants
+const supabase = createClient(process.env.REACT_APP_SUPABASE_URL, process.env.REACT_APP_SUPABASE_ANON_KEY);
+
+const ImageDetailsPage = () => {
+    const { imageId } = useParams();
+    const [imageDetails, setImageDetails] = useState(null);
     const [variants, setVariants] = useState([]);
 
-    // Function to add a new variant
-    const addVariant = () => {
-        // Add your logic here to add a new variant
-        // This can include opening a modal or redirecting to a form page
-    };
-
-    // Function to fetch variants based on image ID
-    const fetchVariants = async () => {
-        try {
-            // Fetch variants based on the image ID
-            // You can use axios or fetch API for this
-            // Update the variants state with the fetched data
-            // setVariants(fetchedVariants);
-        } catch (error) {
-            console.error('Error fetching variants:', error);
-            // Handle error
-        }
-    };
-
-    // useEffect to fetch variants when component mounts
     useEffect(() => {
-        fetchVariants();
-    }, []);
+        const fetchImageDetails = async () => {
+            try {
+                const { data: image, error } = await supabase
+                    .from('renders')
+                    .select()
+                    .eq('id', imageId)
+                    .single();
+                if (error) {
+                    throw new Error(error.message);
+                }
+                setImageDetails(image);
+
+                const { data: variantsData, error: variantsError } = await supabase
+                    .from('variations')
+                    .select()
+                    .eq('render_id', image.id);
+                if (variantsError) {
+                    throw new Error(variantsError.message);
+                }
+                setVariants(variantsData);
+            } catch (error) {
+                console.error('Error fetching image details:', error);
+            }
+        };
+        fetchImageDetails();
+    }, [imageId]);
 
     return (
         <div title={"Tipriyo-Home "} className='font-[SanAntycs]'>
-            <div className='bg-cover '
-                style={{
-                    // backgroundImage: 'url("home/LivingRoomB.jpg")'
-                }}>
-
-
+            <div className='bg-cover'>
                 <div className='backdrop-blur-sm lg:pt-[7vh] pt-[3vh]'>
                     <Header />
                 </div>
-             <div className="container mx-auto px-4 py-8">
-                <h2 className="text-3xl font-semibold mb-4">Image Details</h2>
-                <div className="flex flex-wrap items-start justify-center">
-                    {/* Display image details here */}
-                    <div className="w-full md:w-1/2 lg:w-1/3 p-4">
-                        <div className="bg-white shadow-md rounded-lg p-4">
-                            {/* Display image and its details */}
-                            <img src={`https://example.com/images/${imageId}`} alt={`Image ${imageId}`} className="w-full h-auto rounded-lg mb-4" />
-                            {/* Display other image details */}
+                <div className="container mx-auto px-4 py-8 flex justify-center items-center flex-col">
+                    {imageDetails && (
+                        <div className="w-full md:w-1/2 lg:w-1/3 p-4">
+                            <div className="bg-white shadow-md rounded-lg p-4">
+                                <img src={imageDetails.image_url} alt={`Image ${imageId}`} className="w-full h-auto rounded-lg mb-4 mx-auto" />
+                                {/* Display other image details */}
+                            </div>
                         </div>
-                    </div>
+                    )}
+                    {/* Button to add new variant */}
+                    <div className="my-8">
+                    <Link to={imageDetails ? `/generate-image?imageUrl=${encodeURIComponent(imageDetails.image_url)}` : '/'} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Add New Variant
+</Link>
 
-                    {/* Display variants */}
-                    <div className="w-full md:w-1/2 lg:w-2/3 p-4">
-                        <h3 className="text-xl font-semibold mb-4">Variants</h3>
-                        {/* Iterate through variants and display each variant */}
-                        {variants.map((variant, index) => (
-                            <div key={index} className="bg-white shadow-md rounded-lg p-4 mb-4">
-                                {/* Display variant details */}
+                    </div>
+                    <div className="flex flex-wrap justify-center">
+                        {/* Display variants */}
+                        {variants.map(variant => (
+                            <div key={variant.id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+                                <div className="bg-white shadow-md rounded-lg p-4">
+                                    <img src={variant.image_url} alt={`Variant ${variant.id}`} className="w-full h-auto rounded-lg mb-4 mx-auto" />
+                                    {/* Display other variant details */}
+                                </div>
                             </div>
                         ))}
-                        {/* Button to add new variant */}
-                        <button onClick={addVariant} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Add New Variant
-                        </button>
                     </div>
+                    
                 </div>
-            </div>
+                {variants.length === 0 && (
+                    <div className="text-center text-gray-600 my-8">
+                        <p className="mb-2">No variants available.</p>
+                        <p>Click above to add new variants.</p>
+                    </div>
+                )}
             </div>
             <Footer />
-        
         </div>
     );
 };

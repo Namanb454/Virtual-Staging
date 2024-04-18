@@ -3,10 +3,17 @@ import axios from 'axios';
 import Header from '../components/Layout/Header'
 import { useNavigate } from 'react-router-dom';
 import { createClient } from '@supabase/supabase-js';
+import { useLocation } from 'react-router-dom';
 
 const supabase = createClient(process.env.REACT_APP_SUPABASE_URL, process.env.REACT_APP_SUPABASE_ANON_KEY);
 
 const GenerateImage = () => {
+    const location = useLocation(); // Initialize useLocation hook
+    const queryParams = new URLSearchParams(location.search); // Get query parameters
+    const imageUrlParam = queryParams.get('imageUrl'); // Get imageUrl parameter from query
+    
+    const [imageUrl, setImageUrl] = useState(imageUrlParam || '');
+
     // dropdown 
     const [isOpen1, setIsOpen1] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
@@ -52,7 +59,7 @@ const GenerateImage = () => {
 
 
     // virtual staging parameters
-    const [imageUrl, setImageUrl] = useState('');
+    
     const [roomType, setRoomType] = useState('bed');
     const [style, setStyle] = useState('modern');
     const [resolution, setResolution] = useState('4k');
