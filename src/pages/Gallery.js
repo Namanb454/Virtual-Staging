@@ -9,73 +9,74 @@ import { useNavigate } from 'react-router-dom';
 const supabase = createClient(process.env.REACT_APP_SUPABASE_URL, process.env.REACT_APP_SUPABASE_ANON_KEY);
 
 const GalleryPage = () => {
-
-    const [userLoading, setUserLoading] = useState(true);
-
-    const navigate = useNavigate();
-
-    // State to manage user data and credits
     const [userData, setUserData] = useState(null);
-    const [credits, setCredits] = useState(0);
-    const [showDropdown, setShowDropdown] = useState(false);
-    const [session, setSession] = useState(null);
-
-    const handleLogout = async () => {
-        await supabase.auth.signOut()
-        setSession(null)
-        window.location.reload();
-    }
-
-    // Function to fetch user data and credits
-    const fetchUserData = async () => {
-        console.log("fetch user data", userLoading)
-        if (!userLoading) return
-
-        try {
-            const user = (await supabase.auth.getSession()).data.session?.user;
-
-            if (!user) {
-                // If no user data, navigate to login page
-                navigate('/auth');
-                return;
-            }
-            // Fetch user data from Supabase
-            const { data, error } = await supabase.from('users').select().eq('user_id', user.id).limit(1);
-            if (error) throw error;
-
-            if (data.length == 0) {
-                navigate("/")
-            } else {
-                setUserData(data[0]);
-                setUserLoading(false)
-            }
-
-            setCredits(data[0].credits);
-        } catch (error) {
-            console.error('Error fetching user data:', error);
-            // Handle error
-            handleLogout();
-        }
-    };
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [imageList, setImageList] = useState([]);
+    const [page, setPage] = useState(1);
+    const [hasMore, setHasMore] = useState(true);
+    const navigate = useNavigate();
+    const observer = useRef();
 
     useEffect(() => {
-        // Subscribe to changes in authentication state
-        const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
-            setSession(session);
-            if (event === 'SIGNED_OUT') {
+        const fetchUserData = async () => {
+            try {
+                const user = (await supabase.auth.getSession()).data.session?.user;
+                if (!user) {
+                    navigate('/auth');
+                    return;
+                }
+                const { data, error } = await supabase.from('users').select().eq('user_id', user.id).limit(1);
+                if (error) throw error;
+                if (data.length === 0) {
+                    navigate("/");
+                } else {
+                    setUserData(data[0]);
+                }
+            } catch (error) {
+                console.error('Error fetching user data:', error);
                 navigate('/auth');
-            } else if (event == 'SIGNED_IN') {
-                fetchUserData();
-            }
-        });
-
-        return () => {
-            // Check if listener is defined before unsubscribing
-            if (listener && typeof listener.unsubscribe === 'function') {
-                listener.unsubscribe();
             }
         };
-    }, []);
+        fetchUserData();
+    }, [navigate]);
+
+    useEffect(() => {
+        observer.current = new IntersectionObserver(handleObserver, { threshold: 0.5 });
+        return () => {
+            if (observer.current) {
+                observer.current.disconnect();
+            }
+        };
+    }, );
+
+    useEffect(() => {
+        const fetchImageList = async () => {
+            if (!userData) return;
+            try {
+                const { images } = await supabase.from('renders').select().eq('user_id', userData.id);
+                console.log("images", images);
+                const response = await axios.get(`https://jsonplaceholder.typicode.com/photos?_page=${page}`);
+                setImageList(prevImageList => [...prevImageList, ...response.data.map(photo => photo.url)]);
+                if (response.data.length === 0) {
+                    setHasMore(false);
+                }
+            } catch (error) {
+                console.error('Error fetching image list:', error);
+                setError('Failed to fetch images.');
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchImageList();
+    }, [userData, page]);
+
+    const handleObserver = (entities) => {
+        const target = entities[0];
+        if (target.isIntersecting && hasMore) {
+            setPage(prevPage => prevPage + 1);
+        }
+    };
 
     const variants = {
         hidden: { opacity: 0 },
@@ -100,62 +101,6 @@ const GalleryPage = () => {
             },
         },
     };
-
-    const [imageList, setImageList] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const [page, setPage] = useState(1);
-    const [hasMore, setHasMore] = useState(true);
-    const observer = useRef();
-
-    useEffect(() => {
-        fetchImageList();
-    }, [page]);
-
-    useEffect(() => {
-        observer.current = new IntersectionObserver(
-            handleObserver,
-            { threshold: 0.5 }
-        );
-    }, []);
-
-    const handleObserver = (entities) => {
-        const target = entities[0];
-        if (target.isIntersecting && hasMore) {
-            setPage(prevPage => prevPage + 1);
-        }
-    };
-
-    const fetchImageList = async () => {
-        if (!userData) return
-
-        try {
-            const { images, error } = await supabase.from('renders').select().eq('user_id', userData.id);
-            console.log("images", images)
-
-            const response = await axios.get(`https://jsonplaceholder.typicode.com/photos?_page=${page}&_limit=10`);
-            setImageList(prevImageList => [...prevImageList, ...response.data.map(photo => photo.url)]);
-            if (response.data.length === 0) {
-                setHasMore(false);
-            }
-        } catch (error) {
-            console.error('Error fetching image list:', error);
-            setError('Failed to fetch images.');
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    useEffect(() => {
-        if (!loading && hasMore) {
-            observer.current.observe(document.querySelector('.observer'));
-        }
-        return () => {
-            if (observer.current) {
-                observer.current.disconnect();
-            }
-        };
-    }, [loading, hasMore]);
 
     return (
         <div title={"Tipriyo-Home "} className='font-[SanAntycs]'>
