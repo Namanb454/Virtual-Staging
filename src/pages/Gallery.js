@@ -48,17 +48,23 @@ const GalleryPage = () => {
                 observer.current.disconnect();
             }
         };
-    }, );
+    }, []);
 
     useEffect(() => {
         const fetchImageList = async () => {
-            if (!userData) return;
+            if (!userData || !page) return;
             try {
-                const { images } = await supabase.from('renders').select().eq('user_id', userData.id);
-                console.log("images", images);
-                const response = await axios.get(`https://jsonplaceholder.typicode.com/photos?_page=${page}`);
-                setImageList(prevImageList => [...prevImageList, ...response.data.map(photo => photo.url)]);
-                if (response.data.length === 0) {
+                const { data: images, error } = await supabase
+                    .from('renders')
+                    .select('image_url')
+                    .eq('user_id', userData.id)
+                    .range((page - 1) * 10, page * 10 - 1);
+                if (error) {
+                    throw new Error(error.message);
+                }
+                const imageUrls = images.map(image => image.image_url);
+                setImageList(prevImageList => [...prevImageList, ...imageUrls]);
+                if (images.length === 0) {
                     setHasMore(false);
                 }
             } catch (error) {
@@ -69,7 +75,7 @@ const GalleryPage = () => {
             }
         };
         fetchImageList();
-    }, [userData, page]);
+    }, [userData &&page]);
 
     const handleObserver = (entities) => {
         const target = entities[0];
