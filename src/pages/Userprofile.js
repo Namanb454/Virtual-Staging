@@ -3,34 +3,40 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Layout/Header';
 import Footer from '../components/Layout/Footer';
 import { createClient } from '@supabase/supabase-js';
+import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 
 const supabase = createClient(process.env.REACT_APP_SUPABASE_URL, process.env.REACT_APP_SUPABASE_ANON_KEY);
 
 const UserProfilePage = () => {
     const navigate = useNavigate();
 
+    const stripe = useStripe();
+    const elements = useElements();
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
+
     // State to manage user data and credits
     const [userData, setUserData] = useState(null);
-    
+
 
     // Function to fetch user data
     const fetchUserData = async () => {
         try {
             const user = (await supabase.auth.getSession()).data.session?.user;
-            
-             if (!user) {
-                 // If no user data, navigate to login page
-                 navigate('/auth');
-                 return;
-             }
-            
+
+            if (!user) {
+                // If no user data, navigate to login page
+                navigate('/auth');
+                return;
+            }
+
             // Fetch user data from Supabase
             ;
             const { data, error } = await supabase.from('users').select().eq('user_id', user.id).limit(1);
             if (error) throw error;
-            
+
             setUserData(data);
-            
+
         } catch (error) {
             console.error('Error fetching user data:', error);
             // Handle error
@@ -46,7 +52,7 @@ const UserProfilePage = () => {
     if (!userData) {
         return <div>Loading...</div>;
     }
-  
+
     // Pricing data for purchasing credits
     const pricingData = [
         {
@@ -84,6 +90,30 @@ const UserProfilePage = () => {
         // Add logic for purchasing credits
     };
 
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        if (!stripe || !elements) {
+            return;
+        }
+
+        setLoading(true);
+
+        const { error, paymentMethod } = await stripe.createPaymentMethod({
+            type: 'card',
+            card: elements.getElement(CardElement),
+        });
+
+        setLoading(false);
+
+        if (error) {
+            setError(error.message);
+        } else {
+            // Handle successful payment, e.g., send paymentMethod.id to your server
+            console.log('PaymentMethod', paymentMethod);
+        }
+    };
+
     return (
         <div className='font-[SanAntycs]'>
             <div className='bg-cover'>
@@ -100,6 +130,15 @@ const UserProfilePage = () => {
                         <button onClick={handlePurchaseCredits} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
                             Purchase More Credits
                         </button>
+
+                        <form onSubmit={handleSubmit}>
+                            <CardElement />
+                            <button type="submit" disabled={!stripe || loading}>
+                                {loading ? 'Processing...' : 'Pay'}
+                            </button>
+                            {error && <div>{error}</div>}
+                        </form>
+
                         {/* Dropdown menu for purchasing more credits */}
                         <div className="bg-white shadow-md rounded-lg p-4 mt-4 w-full">
                             {pricingData.map((data, index) => (
